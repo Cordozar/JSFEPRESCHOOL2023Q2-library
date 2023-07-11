@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="logo">
+        Brooklyn Public Library
+      </h1>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#">About</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Favorites</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Coffee shop</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Contacts</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Library Card</a>
+          </li>
+        </ul>
+      </nav>
+      <span class="header__icon-profile">
+      </span>
+    </header>
+  </div>
+
+  <main>
+    <div class="wrapper">
+      <section class="welcome">
+        <h2 class="welcome__title">
+          Welcome to the Brooklyn Library
+        </h2>
+      </section>
+    </div>
+
+    <div class="wrapper">
+      <section class="about">
+        <h2 class="about__title">
+          About
+        </h2>
+        <p class="about__description">
+          The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
+        </p>
+        <div class="slider">
+          <div class="slider__wrapper">
+            <img class="slider__slide" src="" alt="slide">
+            <img class="slider__slide" src="" alt="slide">
+            <img class="slider__slide" src="" alt="slide">
+          </div>
+          <div class="slider__pagination">
+            <div class="slider__dot-wrapper">
+              <div class="slider__dot-select"></div>
+            </div>
+            <div class="slider__dot-wrapper">
+              <div class="slider__dot"></div>
+            </div>
+            <div class="slider__dot-wrapper">
+              <div class="slider__dot"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="wrapper">
+      <section class="favorites">
+        <h2 class="favorites__title">
+          Favorites
+        </h2>
+        <div class="sorter">
+          <div class="sorter__description">
+            Pick favorites of season
+          </div>
+          <form class="sorter__form" action="#">
+            <div class="sorter__choice">
+              <input type="radio" id="winter" name="season" value="winter">
+              <label for="winter">Winter</label>
+            </div>
+            <div class="sorter__choice">
+              <input type="radio" id="spring" name="season" value="spring">
+              <label for="spring">Spring</label>
+            </div>
+            <div class="sorter__choice">
+              <input type="radio" id="summer" name="season" value="summer">
+              <label for="summer">Summer</label>
+            </div>
+            <div class="sorter__choice">
+              <input type="radio" id="autumn" name="season" value="autumn">
+              <label for="autumn">Autumn</label>
+            </div>
+          </form>
+          <div class="sorter__card-wrapper">
+            <div class="sorter__card card">
+              <div class="card__book-status">
+                Staff Picks
+              </div>
+              <h3 class="card__book-title">
+                The Book Eaters
+              </h3>
+              <div class="card__book-author">
+                By Sunyi Dean
+              </div>
+              <p class="card__book-description">
+                An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater
+                son
+                from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and
+                a
+                strong, complex protagonist. Not for the faint of heart.
+              </p>
+              <button class="card__btn">
+                Buy
+              </button>
+              <img src="" alt="book cover">
+            </div>
+            <div class="sorter__card card">
+              <div class="card__book-status">
+                Staff Picks
+              </div>
+              <h3 class="card__book-title">
+                Cackle
+              </h3>
+              <div class="card__book-author">
+                By Rachel Harrison
+              </div>
+              <p class="card__book-description">
+                Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than
+                here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends
+                a beautiful witch.
+              </p>
+              <button class="card__btn">
+                Buy
+              </button>
+              <img src="" alt="book cover">
+            </div>
+            <div class="sorter__card card">
+              <div class="card__book-status">
+                Staff Picks
+              </div>
+              <h3 class="card__book-title">
+                Dante: Poet of the Secular World
+              </h3>
+              <div class="card__book-author">
+                By Erich Auerbach
+              </div>
+              <p class="card__book-description">
+                Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in
+                general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into
+                something of divine significance—an inspired introduction to Dante's main themes.
+              </p>
+              <button class="card__btn">
+                Buy
+              </button>
+              <img src="" alt="book cover">
+            </div>
+            <div class="sorter__card card">
+              <div class="card__book-status">
+                Staff Picks
+              </div>
+              <h3 class="card__book-title">
+                The Last Queen
+              </h3>
+              <div class="card__book-author">
+                By Clive Irving
+              </div>
+              <p class="card__book-description">
+                A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors
+                have evolved and thrived as the modern world has changed around them.
+              </p>
+              <button class="card__btn">
+                Buy
+              </button>
+              <img src="" alt="book cover">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="wrapper">
+      <section class="shop">
+        <h2 class="shop__title">
+          Coffee shop
+        </h2>
+        <p class="shop__description">
+          In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly
+          conversation. you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and
+          also you can try desserts from bakery.
+        </p>
+        <div class="layout-2-column">
+          <div class="shop__food food food_drink-list">
+            <h4 class="food__title">
+              Coffee & Tea
+            </h4>
+            <div class="food__item">
+              <div class="food__name">
+                Cold Brew Coffee
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__price">
+                $3
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                French Press Pot
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__price">
+                $5
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Espresso
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__price">
+                $2
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Cappuccino
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__price">
+                $4
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Hot tea
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__price">
+                $2
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Cold tea
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__price">
+                $2
+              </div>
+            </div>
+            
+            <div class="shop__food food food_baking-list">
+              <h4 class="food__title">
+                Desserts & Cakes
+              </h4>
+              <div class="food__item">
+                <div class="food__name">
+                  Forest Gateau
+                </div>
+                <div class="food__separator"></div>
+                <div class="food__price">
+                  $16
+                </div>
+              </div>
+              <div class="food__item">
+                <div class="food__name">
+                  Blue Moon
+                </div>
+                <div class="food__separator"></div>
+                <div class="food__price">
+                  $16
+                </div>
+              </div>
+              <div class="food__item">
+                <div class="food__name">
+                  Truffle Cake
+                </div>
+                <div class="food__separator"></div>
+                <div class="food__price">
+                  $15
+                </div>
+              </div>
+              <div class="food__item">
+                <div class="food__name">
+                  Chocolate Cake
+                </div>
+                <div class="food__separator"></div>
+                <div class="food__price">
+                  $18
+                </div>
+              </div>
+              <div class="food__item">
+                <div class="food__name">
+                  Poet’s Dream Cake
+                </div>
+                <div class="food__separator"></div>
+                <div class="food__price">
+                  $16
+                </div>
+              </div>
+              <div class="food__item">
+                <div class="food__name">
+                  Pineapple Cake
+                </div>
+                <div class="food__separator"></div>
+                <div class="food__price">
+                  $14
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="wrapper">
+      <section class="contacts">
+        <h2 class="contacts__title">
+          Our Contacts
+        </h2>
+        <div class="layout-2-column">
+          <div class="contacts-info">
+            <div class="contacts-description">
+              For all Library inquiries:
+            </div>
+            Please call
+            <a id="phone1" href="tel:+6177302370">(617) 730-2370</a>
+            For TTY service, please call
+            <a id="phone1" href="tel:+6177302370">(617) 730-2370</a>
+            Putterham Library: 
+            <a id="phone1" href="tel:+6177302385">(617) 730-2385</a>
+            <div class="contacts-description">
+              Senior Staff
+            </div>
+            Library Director: 
+            <a href="mailto:AmandaHirst@gmail.com">Amanda Hirst</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>
