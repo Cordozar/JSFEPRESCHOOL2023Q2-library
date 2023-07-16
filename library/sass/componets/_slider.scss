@@ -1,0 +1,33 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+}
+.slider__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.slider__slide {
+}
+.slider__pagination {
+  display: flex;
+  margin: 0 auto;
+}
+.slider__dot-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+.slider__dot {
+  width: 16px;
+  height: 16px;
+  background-color: $color-main-dark;
+  border-radius: 50%;
+
+  &_select {
+    background-color: $color-primary;
+  }
+}

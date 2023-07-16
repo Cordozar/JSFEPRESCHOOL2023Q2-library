@@ -1,0 +1,135 @@
+$distance: 38px;
+$padding-right: 40px;
+
+.sorter {
+  padding-right: $padding-right;
+}
+.sorter__description {
+  @include font-inter($font-weight: 700, $letter-spacing: 0.1px);
+
+  margin-bottom: 43px;
+}
+.sorter__form {
+  display: flex;
+  margin-bottom: 43px;
+}
+.sorter__choice {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-right: 89px;
+  }
+}
+.sorter__radio {
+  display: none;
+
+  & + span {
+    @include font-inter($font-weight: 700, $line-height: 0.9);
+
+    position: relative;
+    padding-left: $distance;
+    cursor: pointer;
+  }
+  & + span::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border: solid 3px $color-black;
+    border-radius: 50%;
+  }
+  & + span::after {
+    content: '';
+    position: absolute;
+    bottom: 4.5px;
+    left: 5px;
+    display: none;
+    width: 8px;
+    height: 8px;
+    background-color: $color-black;
+    border-radius: 50%;
+  }
+  &:checked + span::after {
+    display: block;
+  }
+}
+.sorter__cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 40px;
+}
+.sorter__card {
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  padding: 15px 172px 14px 20px;
+  border: 1px solid $color-black;
+}
+.card__book-status {
+  @include font-forum(
+  $font-size: 20px,
+  $line-height: 40px,
+  $letter-spacing: 2px,
+  $color: $color-black
+  );
+
+  position: relative;
+  margin-bottom: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 50px;
+    height: 0.5px;
+    background-color: $color-primary;
+  }
+}
+.card__book-title {
+  @include font-inter(
+  $font-size: 15px,
+  $font-weight: 700,
+  $line-height: 40px,
+  $letter-spacing: 2px
+  );
+
+  text-transform: uppercase;
+  // white-space: nowrap;
+}
+.card__book-author {
+  @include font-inter(
+  $font-size: 15px,
+  $font-weight: 700,
+  $line-height: 40px,
+  $letter-spacing: 2px
+  );
+
+  margin-bottom: 20px;
+}
+.card__book-description {
+  @include font-inter(
+  $font-size: 15px,
+  $line-height: 40px,
+  $letter-spacing: 2px
+  );
+
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+.card__btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+.card__img {
+  position: absolute;
+  right: -$padding-right;
+  bottom: -1px;
+}

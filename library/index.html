@@ -5,13 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./sass/main.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <header class="header">
+  <header class="header">
+    <div class="header__wrapper wrapper">
       <h1 class="logo">
-        Brooklyn Public Library
+        <a class="logo__link" href="#">Brooklyn Public Library</a>
       </h1>
       <nav class="header__nav nav">
         <ul class="nav__list">
@@ -32,23 +36,24 @@
           </li>
         </ul>
       </nav>
-      <span class="header__icon-profile">
-      </span>
-    </header>
-  </div>
+      <div class="header__icon-profile">
+        <object data="./img/svg/icon_profile.svg" type="image/svg+xml">
+          <img src="../library/img/svg/icon_profile.svg" alt="icon-profile">
+        </object>
+      </div>
+    </div>
+  </header>
 
   <main>
-    <div class="wrapper">
-      <section class="welcome">
-        <h2 class="welcome__title">
-          Welcome to the Brooklyn Library
-        </h2>
-      </section>
-    </div>
+    <section class="welcome">
+      <h2 class="welcome__title">
+        <span class="welcome__title-fist-line">Welcome</span> to the Brooklyn Library
+      </h2>
+    </section>
 
     <div class="wrapper">
       <section class="about">
-        <h2 class="about__title">
+        <h2 class="about__title section-title">
           About
         </h2>
         <p class="about__description">
@@ -56,13 +61,13 @@
         </p>
         <div class="slider">
           <div class="slider__wrapper">
-            <img class="slider__slide" src="" alt="slide">
-            <img class="slider__slide" src="" alt="slide">
-            <img class="slider__slide" src="" alt="slide">
+            <img class="slider__slide" src="./img/slider/slider-1.png" alt="slide">
+            <img class="slider__slide" src="./img/slider/slider-2.png" alt="slide">
+            <img class="slider__slide" src="./img/slider/slider-3.png" alt="slide">
           </div>
           <div class="slider__pagination">
             <div class="slider__dot-wrapper">
-              <div class="slider__dot-select"></div>
+              <div class="slider__dot slider__dot_select"></div>
             </div>
             <div class="slider__dot-wrapper">
               <div class="slider__dot"></div>
@@ -77,7 +82,7 @@
 
     <div class="wrapper">
       <section class="favorites">
-        <h2 class="favorites__title">
+        <h2 class="favorites__title section-title">
           Favorites
         </h2>
         <div class="sorter">
@@ -85,24 +90,24 @@
             Pick favorites of season
           </div>
           <form class="sorter__form" action="#">
-            <div class="sorter__choice">
-              <input type="radio" id="winter" name="season" value="winter">
-              <label for="winter">Winter</label>
-            </div>
-            <div class="sorter__choice">
-              <input type="radio" id="spring" name="season" value="spring">
-              <label for="spring">Spring</label>
-            </div>
-            <div class="sorter__choice">
-              <input type="radio" id="summer" name="season" value="summer">
-              <label for="summer">Summer</label>
-            </div>
-            <div class="sorter__choice">
-              <input type="radio" id="autumn" name="season" value="autumn">
-              <label for="autumn">Autumn</label>
-            </div>
+            <label class="sorter__choice" for="winter">
+              <input class="sorter__radio" checked type="radio" id="winter" name="season" value="winter">
+              <span>Winter</span>
+            </label>
+            <label class="sorter__choice" for="spring">
+              <input class="sorter__radio" type="radio" id="spring" name="season" value="spring">
+              <span>Spring</span>
+            </label>
+            <label class="sorter__choice" for="summer">
+              <input class="sorter__radio" type="radio" id="summer" name="season" value="summer">
+              <span>Summer</span>
+            </label>
+            <label class="sorter__choice" for="autumn">
+              <input class="sorter__radio" type="radio" id="autumn" name="season" value="autumn">
+              <span>Autumn</span>
+            </label>
           </form>
-          <div class="sorter__card-wrapper">
+          <div class="sorter__cards-wrapper">
             <div class="sorter__card card">
               <div class="card__book-status">
                 Staff Picks
@@ -120,10 +125,10 @@
                 a
                 strong, complex protagonist. Not for the faint of heart.
               </p>
-              <button class="card__btn">
+              <button class="card__btn btn">
                 Buy
               </button>
-              <img src="" alt="book cover">
+              <img class="card__img" src="./img/sorter/book-winter-1.jpg" alt="book cover">
             </div>
             <div class="sorter__card card">
               <div class="card__book-status">
@@ -140,10 +145,10 @@
                 here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends
                 a beautiful witch.
               </p>
-              <button class="card__btn">
+              <button class="card__btn btn">
                 Buy
               </button>
-              <img src="" alt="book cover">
+              <img class="card__img" src="./img/sorter/book-winter-2.jpg" alt="book cover">
             </div>
             <div class="sorter__card card">
               <div class="card__book-status">
@@ -160,10 +165,10 @@
                 general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into
                 something of divine significance—an inspired introduction to Dante's main themes.
               </p>
-              <button class="card__btn">
+              <button class="card__btn btn">
                 Buy
               </button>
-              <img src="" alt="book cover">
+              <img class="card__img" src="./img/sorter/book-winter-3.jpg" alt="book cover">
             </div>
             <div class="sorter__card card">
               <div class="card__book-status">
@@ -179,10 +184,10 @@
                 A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors
                 have evolved and thrived as the modern world has changed around them.
               </p>
-              <button class="card__btn">
-                Buy
+              <button class="card__btn btn btn_own" disabled>
+                Own
               </button>
-              <img src="" alt="book cover">
+              <img class="card__img" src="./img/sorter/book-winter-4.jpg" alt="book cover">
             </div>
           </div>
         </div>
@@ -191,7 +196,7 @@
 
     <div class="wrapper">
       <section class="shop">
-        <h2 class="shop__title">
+        <h2 class="shop__title section-title">
           Coffee shop
         </h2>
         <p class="shop__description">
@@ -209,8 +214,11 @@
                 Cold Brew Coffee
               </div>
               <div class="food__separator"></div>
-              <div class="food__price">
-                $3
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                3
               </div>
             </div>
             <div class="food__item">
@@ -218,8 +226,11 @@
                 French Press Pot
               </div>
               <div class="food__separator"></div>
-              <div class="food__price">
-                $5
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                5
               </div>
             </div>
             <div class="food__item">
@@ -227,8 +238,11 @@
                 Espresso
               </div>
               <div class="food__separator"></div>
-              <div class="food__price">
-                $2
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                2
               </div>
             </div>
             <div class="food__item">
@@ -236,8 +250,11 @@
                 Cappuccino
               </div>
               <div class="food__separator"></div>
-              <div class="food__price">
-                $4
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                4
               </div>
             </div>
             <div class="food__item">
@@ -245,8 +262,11 @@
                 Hot tea
               </div>
               <div class="food__separator"></div>
-              <div class="food__price">
-                $2
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                2
               </div>
             </div>
             <div class="food__item">
@@ -254,68 +274,88 @@
                 Cold tea
               </div>
               <div class="food__separator"></div>
-              <div class="food__price">
-                $2
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                2
               </div>
             </div>
-            
-            <div class="shop__food food food_baking-list">
-              <h4 class="food__title">
-                Desserts & Cakes
-              </h4>
-              <div class="food__item">
-                <div class="food__name">
-                  Forest Gateau
-                </div>
-                <div class="food__separator"></div>
-                <div class="food__price">
-                  $16
-                </div>
+          </div>
+          <div class="shop__food food food_baking-list">
+            <h4 class="food__title">
+              Desserts & Cakes
+            </h4>
+            <div class="food__item">
+              <div class="food__name">
+                Forest Gateau
               </div>
-              <div class="food__item">
-                <div class="food__name">
-                  Blue Moon
-                </div>
-                <div class="food__separator"></div>
-                <div class="food__price">
-                  $16
-                </div>
+              <div class="food__separator"></div>
+              <div class="food__dollar">
+                $
               </div>
-              <div class="food__item">
-                <div class="food__name">
-                  Truffle Cake
-                </div>
-                <div class="food__separator"></div>
-                <div class="food__price">
-                  $15
-                </div>
+              <div class="foot__price">
+                16
               </div>
-              <div class="food__item">
-                <div class="food__name">
-                  Chocolate Cake
-                </div>
-                <div class="food__separator"></div>
-                <div class="food__price">
-                  $18
-                </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Blue Moon
               </div>
-              <div class="food__item">
-                <div class="food__name">
-                  Poet’s Dream Cake
-                </div>
-                <div class="food__separator"></div>
-                <div class="food__price">
-                  $16
-                </div>
+              <div class="food__separator"></div>
+              <div class="food__dollar">
+                $
               </div>
-              <div class="food__item">
-                <div class="food__name">
-                  Pineapple Cake
-                </div>
-                <div class="food__separator"></div>
-                <div class="food__price">
-                  $14
-                </div>
+              <div class="foot__price">
+                16
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Truffle Cake
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                15
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Chocolate Cake
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                18
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Poet’s Dream Cake
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                16
+              </div>
+            </div>
+            <div class="food__item">
+              <div class="food__name">
+                Pineapple Cake
+              </div>
+              <div class="food__separator"></div>
+              <div class="food__dollar">
+                $
+              </div>
+              <div class="foot__price">
+                14
               </div>
             </div>
           </div>
@@ -325,30 +365,128 @@
 
     <div class="wrapper">
       <section class="contacts">
-        <h2 class="contacts__title">
+        <h2 class="contacts__title section-title">
           Our Contacts
         </h2>
         <div class="layout-2-column">
-          <div class="contacts-info">
-            <div class="contacts-description">
+          <div class="contacts__info">
+            <div class="contacts__description">
               For all Library inquiries:
             </div>
-            Please call
-            <a id="phone1" href="tel:+6177302370">(617) 730-2370</a>
-            For TTY service, please call
-            <a id="phone1" href="tel:+6177302370">(617) 730-2370</a>
-            Putterham Library: 
-            <a id="phone1" href="tel:+6177302385">(617) 730-2385</a>
-            <div class="contacts-description">
+            <div class="contacts__connection">
+              Please call
+              <a class="contacts__tel" id="phone1" href="tel:+6177302370">(617) 730-2370</a>
+            </div>
+            <div class="contacts__connection">
+              For TTY service, please call
+              <a class="contacts__tel" id="phone2" href="tel:+6177302370">(617) 730-2370</a>
+            </div>
+            <div class="contacts__connection">
+              Putterham Library:
+              <a class="contacts__tel" id="phone3" href="tel:+6177302385">(617) 730-2385</a>
+            </div>
+            <div class="contacts__staff">
               Senior Staff
             </div>
-            Library Director: 
-            <a href="mailto:AmandaHirst@gmail.com">Amanda Hirst</a>
+            <div>
+              Library Director:
+              <a class="contacts__email" href="mailto:AmandaHirst@gmail.com">Amanda Hirst</a>
+            </div>
+          </div>
+          <img src="./img/map.jpg" alt="map">
+          <!-- <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1512.5079879237162!2d-73.99202539892059!3d40.69564579771484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a49b649b8c3%3A0x6342a2291cea2e!2zMjg2IENhZG1hbiBQbGF6YSBXLCBCcm9va2x5biwgTlkgMTEyMDEsINCh0KjQkA!5e0!3m2!1sru!2sby!4v1689179000230!5m2!1sru!2sby"
+            width="696" height="414" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+        </div>
+      </section>
+    </div>
+
+    <div class="wrapper">
+      <section class="cards">
+        <h2 class="cards__title section-title">
+          Digital Library Cards
+        </h2>
+        <div class="layout-2-column">
+          <div class="cards__search-card search-card">
+            <div class="search-card__title">
+              Find your Library card
+            </div>
+            <form class="search-card__form" action="#">
+              <div class="search-card__form-inputs">
+                <div class="search-card__library-name">
+                  Brooklyn Public Library
+                </div>
+                <input class="search-card__user-name" placeholder="Reader's name" type="search" name="user-name"
+                  id="user-name">
+                <input class="search-card__card-number" placeholder="Card number" type="search" name="card-number"
+                  id="card-number">
+              </div>
+              <input class="search-card__search-btn btn btn_cards-btn" type="submit" value="Check the card">
+            </form>
+          </div>
+          <div class="cards__access-management">
+            <div class="cards__access-title">
+              Get a reader card
+            </div>
+            <p class="cards__access-description">
+              You will be able to see a reader card after logging into account or you can register a new account
+            </p>
+            <div class="cards__access-btns">
+              <button class="cards__access-sign-up btn btn_access-sing">Sign Up</button>
+              <button class="cards__access-log-in btn btn_access-log">Log in</button>
+            </div>
           </div>
         </div>
       </section>
     </div>
   </main>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="layout-2-column">
+        <div class="footer-contacts">
+          <a class="footer-contacts-location"
+            href="https://www.google.com/maps/place/286+Cadman+Plaza+W,+Brooklyn,+NY+11201,+USA/@40.6956458,-73.9912976,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25a49b649b8c3:0x6342a2291cea2e!8m2!3d40.6956458!4d-73.9912976!16s%2Fg%2F11s2lgz8ns?entry=ttu">286
+            Cadman Plaza, New York, NY 11238, United States</a>
+          <ul class="footer__contacts-list">
+            <li class="footer__contacts-item">
+              <a class="footer__contacts-twitter" target="_blank"
+                href="https://twitter.com/i/flow/login?redirect_after_login=%2F"></a>
+            </li>
+            <li class="footer__contacts-item">
+              <a class="footer__contacts-inst" target="_blank" href="https://www.instagram.com/"></a>
+            </li>
+            <li class="footer__contacts-item">
+              <a class="footer__contacts-facebook" target="_blank" href="https://www.facebook.com/"></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__schedule">
+          <div class="footer__schedule-weekdays">
+            Mon - Fri<br>
+            08:00 am - 07:00 pm
+          </div>
+          <div class="footer__schedule-weekend">
+            Sat - Sun<br>
+            10:00 am - 06:00 pm
+          </div>
+        </div>
+      </div>
+      <div class="footer__separator"></div>
+      <div class="footer__layout-3">
+        <div class="footer__year">
+          2023
+        </div>
+        <div class="footer__rss">
+          The Rolling Scopes School
+        </div>
+        <a class="footer__githab" href="https://github.com/">
+          Cordozar
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

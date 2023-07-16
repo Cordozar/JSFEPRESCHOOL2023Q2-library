@@ -1,0 +1,65 @@
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+// body {
+//   position: relative;
+// }
+
+// .body-no-scroll {
+//   overflow: hidden;
+// }
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 1440px;
+  padding: 0 20px;
+}
+
+.section-title {
+  @include font-forum ($font-size: 40px, $line-height: 40px, $letter-spacing: 2px, $color: $color-main-dark);
+
+  position: relative;
+  text-align: center;
+  text-transform: capitalize;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 50px;
+    height: 1px;
+    margin-top: 20px;
+    background-color: $color-main-dark;
+    transform: translateX(-50%);
+  }
+}

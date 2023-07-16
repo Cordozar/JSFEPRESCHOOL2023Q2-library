@@ -1,0 +1,97 @@
+%links {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.footer {
+  padding: 21px 0 44px;
+  background-color: $color-main-dark;
+}
+.footer-contacts {
+  width: 229px;
+}
+.footer-contacts-location {
+  @include font-inter(
+    $font-size: 15px,
+    $line-height: 20px,
+    $color: $color-white
+  );
+
+  display: block;
+  margin-bottom: 18px;
+}
+.footer__contacts-list {
+  display: flex;
+}
+.footer__contacts-item {
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+.footer__contacts-twitter {
+  @extend %links;
+
+  background-image: url('../img/footer/twitter.svg');
+}
+.footer__contacts-inst {
+  @extend %links;
+
+  background-image: url('../img/footer/instagram.svg');
+}
+.footer__contacts-facebook {
+  @extend %links;
+
+  background-image: url('../img/footer/facebook.svg');
+}
+.footer__schedule {
+  @include font-inter(
+    $font-size: 15px,
+    $line-height: 20px,
+    $color: $color-white
+  );
+
+  margin-bottom: 10px;
+  text-align: right;
+}
+.footer__schedule-weekdays {
+  margin-bottom: 10px;
+}
+.footer__schedule-weekend {
+}
+.footer__separator {
+  width: 100%;
+  height: 1px;
+  margin: 20px 0 44px 0;
+  background-color: $color-white;
+}
+.footer__layout-3 {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__year {
+  @include font-inter(
+    $font-size: 20px,
+    $line-height: 20px,
+    $letter-spacing: 2px,
+    $color: $color-white
+  );
+}
+.footer__rss {
+  @include font-inter(
+    $font-size: 20px,
+    $line-height: 20px,
+    $letter-spacing: 2px,
+    $color: $color-white
+  );
+
+  transform: translateX(23px);
+}
+.footer__githab {
+  @include font-inter(
+    $font-size: 20px,
+    $line-height: 20px,
+    $letter-spacing: 2px,
+    $color: $color-white
+  );
+}

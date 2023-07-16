@@ -1,0 +1,4 @@
+.logo__link {
+  @include font-forum($font-size: 30px, $color: $color-white, $letter-spacing: 0.6px);
+}
+

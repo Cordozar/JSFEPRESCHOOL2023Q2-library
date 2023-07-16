@@ -1,0 +1,44 @@
+.food {
+}
+.food_drink-list {
+  & .food__item .food__name {
+    margin-right: auto;
+  }
+}
+.food_baking-list {
+  & .food__title {
+    text-align: end;
+  }
+}
+.food__title {
+  @include font-forum($font-size: 40px, $line-height: 40px, $letter-spacing: 2px, $color: $color-primary);
+
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+.food__item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+.food__name {
+  @include font-inter($line-height: 40px, $letter-spacing: 2px);
+  text-transform: capitalize;
+}
+.food__separator {
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  margin: 0 58px;
+  background-color: $color-primary;
+}
+.food__dollar {
+  @include font-inter($line-height: 40px);
+}
+.foot__price {
+  @include font-inter($font-size: 18px, $line-height: 40px);
+}
