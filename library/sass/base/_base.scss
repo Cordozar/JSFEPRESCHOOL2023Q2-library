@@ -44,6 +44,11 @@ a {
   padding: 0 20px;
 }
 
+.layout-2-column {
+  display: flex;
+  justify-content: space-between;
+}
+
 .section-title {
   @include font-forum ($font-size: 40px, $line-height: 40px, $letter-spacing: 2px, $color: $color-main-dark);
 

@@ -1,12 +1,22 @@
 .btn {
-  @include font-inter($font-size: 10px, $font-weight: 700, $letter-spacing: 1px, $color: $color-main-dark);
+  @include font-inter(
+  $font-size: 10px,
+  $font-weight: 700,
+  $letter-spacing: 1px,
+  $color: $color-main-dark
+  );
 
   display: block;
-  padding: 8px 26px;
   background-color: transparent;
   border: 1px solid $color-main-dark;
   border-radius: 2px;
-  cursor: pointer;
+
+  &_card {
+    @extend %transition-for-btn;
+
+    padding: 8px 26px;
+    cursor: pointer;
+  }
 
   &_own {
     padding: 8px 24px;
@@ -17,13 +27,16 @@
   &_cards-btn {
     padding: 9px 40px;
     font-size: 20px;
+    cursor: pointer;
   }
 
   &_access-sing {
     padding: 8px 14px;
+    cursor: pointer;
   }
 
   &_access-log {
     padding: 8px 19px;
+    cursor: pointer;
   }
 }

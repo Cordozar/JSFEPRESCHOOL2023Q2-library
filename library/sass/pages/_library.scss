@@ -1,8 +1,8 @@
 %form-input {
   @include font-forum(
-    $font-size: 30px,
-    $letter-spacing: 0.6px,
-    $color: $color-black
+  $font-size: 30px,
+  $letter-spacing: 0.6px,
+  $color: $color-black
   );
 
   display: block;
@@ -14,9 +14,9 @@
 
   &::placeholder {
     @include font-forum(
-      $font-size: 30px,
-      $letter-spacing: 0.6px,
-      $color: $color-grey
+    $font-size: 30px,
+    $letter-spacing: 0.6px,
+    $color: $color-grey
     );
   }
 }
@@ -24,22 +24,22 @@
 .welcome {
   padding: 222px 840px 160px 0;
   background: linear-gradient(
-      180deg,
-      #0c0c0e 0%,
-      #0c0c0e 0.01%,
-      rgba(18, 18, 21, 0.1) 47%
-    ),
-    url('../img/welcome_bg.jfif');
+  180deg,
+  #0c0c0e 0%,
+  #0c0c0e 0.01%,
+  rgba(18, 18, 21, 0.1) 47%
+  ),
+  url('../img/welcome_bg.jfif');
   background-position: 0;
   background-size: cover;
 }
 
 .welcome__title {
   @include font-forum(
-    $font-size: 40px,
-    $line-height: 50px,
-    $letter-spacing: 3px,
-    $color: $color-white
+  $font-size: 40px,
+  $line-height: 50px,
+  $letter-spacing: 3px,
+  $color: $color-white
   );
 
   padding: 35px 80px;
@@ -84,11 +84,6 @@
 
   margin-bottom: 40px;
   text-align: center;
-  text-transform: capitalize;
-}
-.layout-2-column {
-  display: flex;
-  justify-content: space-between;
 }
 .shop__food {
 }
@@ -142,10 +137,12 @@
 }
 .cards__access-title {
   @include font-forum($font-size: 30px, $letter-spacing: 0.6px);
+
   margin-bottom: 35px;
 }
 .cards__access-description {
   @include font-inter($line-height: 40px, $letter-spacing: 0.4px);
+
   margin-bottom: 35px;
   text-align: right;
 }
