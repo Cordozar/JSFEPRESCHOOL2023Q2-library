@@ -25,17 +25,23 @@
   }
 
   &_cards-btn {
+    @extend %transition-for-btn;
+
     padding: 9px 40px;
     font-size: 20px;
     cursor: pointer;
   }
 
   &_access-sing {
+    @extend %transition-for-btn;
+
     padding: 8px 14px;
     cursor: pointer;
   }
 
   &_access-log {
+    @extend %transition-for-btn;
+
     padding: 8px 19px;
     cursor: pointer;
   }

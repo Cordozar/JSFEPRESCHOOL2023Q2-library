@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -20,25 +21,25 @@
       <nav class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link" href="#">About</a>
+            <a class="nav__link" href="#about">About</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Favorites</a>
+            <a class="nav__link" href="#favorites">Favorites</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Coffee shop</a>
+            <a class="nav__link" href="#shop">Coffee shop</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Contacts</a>
+            <a class="nav__link" href="#contacts">Contacts</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Library Card</a>
+            <a class="nav__link" href="#cards">Library Card</a>
           </li>
         </ul>
       </nav>
       <div class="header__icon-profile">
-        <object data="./img/svg/icon_profile.svg" type="image/svg+xml">
-          <img src="../library/img/svg/icon_profile.svg" alt="icon-profile">
+        <object class="header__icon-profile-icon" data="./img/icon_profile.svg" type="image/svg+xml">
+          <img src="./img/icon_profile.jpg" alt="icon-profile">
         </object>
       </div>
     </div>
@@ -52,7 +53,7 @@
     </section>
 
     <div class="wrapper">
-      <section class="about">
+      <section id="about" class="about">
         <h2 class="about__title section-title">
           About
         </h2>
@@ -81,7 +82,7 @@
     </div>
 
     <div class="wrapper">
-      <section class="favorites">
+      <section id="favorites" class="favorites">
         <h2 class="favorites__title section-title">
           Favorites
         </h2>
@@ -340,7 +341,9 @@
                 By Kiana Davenport
               </div>
               <p class="card__book-description">
-                An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.
+                An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a
+                Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers,
+                queens and revolutionaries, lepers and healers.
               </p>
               <button class="card__btn btn btn_card">
                 Bay
@@ -358,7 +361,9 @@
                 By Renia White
               </div>
               <p class="card__book-description">
-                White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.
+                White's impressive debut collection takes readers through and beyond the concepts of conversation and
+                the casual - both what we say to each other and what we don't, examining the possibilities around how we
+                construct and communicate identity.
               </p>
               <button class="card__btn btn btn_card">
                 Bay
@@ -376,7 +381,9 @@
                 By Lou Ureneck
               </div>
               <p class="card__book-description">
-                The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide
+                The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning
+                of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the
+                Armenian Genocide
               </p>
               <button class="card__btn btn btn_card">
                 Bay
@@ -394,7 +401,9 @@
                 By Howard Bryant
               </div>
               <p class="card__book-description">
-                With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?
+                With the fall rolling around, one can't help but think of baseball's postseason coming up! And what
+                better way to prepare for it than reading the biography of one of the game's all-time greatest
+                performers, the Man of Steal, Rickey Henderson?
               </p>
               <button class="card__btn btn btn_card">
                 Bay
@@ -412,7 +421,8 @@
                 By Megan Milks
               </div>
               <p class="card__book-description">
-                Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.
+                Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child
+                experience the shared trauma of giving birth to gods from their wounds.
               </p>
               <button class="card__btn btn btn_card">
                 Bay
@@ -425,7 +435,7 @@
     </div>
 
     <div class="wrapper">
-      <section class="shop">
+      <section id="shop" class="shop">
         <h2 class="shop__title section-title">
           Coffee shop
         </h2>
@@ -594,7 +604,7 @@
     </div>
 
     <div class="wrapper">
-      <section class="contacts">
+      <section id="contacts" class="contacts">
         <h2 class="contacts__title section-title">
           Our Contacts
         </h2>
@@ -629,7 +639,7 @@
     </div>
 
     <div class="wrapper">
-      <section class="cards">
+      <section id="cards" class="cards">
         <h2 class="cards__title section-title">
           Digital Library Cards
         </h2>
@@ -645,7 +655,7 @@
                 </div>
                 <input class="search-card__user-name" placeholder="Reader's name" type="search" name="user-name"
                   id="user-name">
-                <input class="search-card__card-number" placeholder="Card number" type="search" name="card-number"
+                <input class="search-card__card-number" pattern="[a-zA-Z0-9-]+" placeholder="Card number" type="search" name="card-number"
                   id="card-number">
               </div>
               <input class="search-card__search-btn btn btn_cards-btn" type="submit" value="Check the card">
@@ -704,15 +714,16 @@
         <div class="footer__year">
           2023
         </div>
-        <div class="footer__rss">
+        <a href="https://rs.school/js-stage0/" target="_blank" class="footer__rss">
           The Rolling Scopes School
-        </div>
+        </a>
         <a class="footer__githab" href="https://github.com/">
           Cordozar
         </a>
       </div>
     </div>
   </footer>
+  <script src="./index.js"></script>
 </body>
 
 </html>
