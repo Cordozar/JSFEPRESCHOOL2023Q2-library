@@ -19,20 +19,20 @@ $padding-right: 40px;
   align-items: center;
 
   &:not(:last-child) {
-    margin-right: 87px;
+    margin-right: 90px;
   }
 }
 .sorter__radio {
-  position: relative;
   display: none;
 
-  & + span {
-    @include font-inter($font-weight: 700, $line-height: 0.9);
+  & + .sorter__choice .sorter__season {
+    @include font-inter($line-height: 0.9);
 
+    position: relative;
     padding-left: $distance;
     cursor: pointer;
   }
-  & + span::before {
+  & + .sorter__choice .sorter__season::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -42,7 +42,7 @@ $padding-right: 40px;
     border: solid 3px $color-black;
     border-radius: 50%;
   }
-  & + span::after {
+  & + .sorter__choice .sorter__season::after {
     content: '';
     position: absolute;
     bottom: 4.5px;
@@ -53,10 +53,14 @@ $padding-right: 40px;
     background-color: $color-black;
     border-radius: 50%;
   }
-  &:checked + span::after {
+  &:checked + .sorter__choice .sorter__season {
+    padding-left: 36.5px;
+    font-weight: 700;
+  }
+  &:checked + .sorter__choice .sorter__season::after {
     display: block;
   }
-  & ~ .sorter__external-zone {
+  & + .sorter__choice .sorter__external-zone {
     content: '';
     position: absolute;
     display: block;
@@ -89,10 +93,10 @@ $padding-right: 40px;
 }
 .card__book-status {
   @include font-forum(
-    $font-size: 20px,
-    $line-height: 40px,
-    $letter-spacing: 2px,
-    $color: $color-black
+  $font-size: 20px,
+  $line-height: 40px,
+  $letter-spacing: 2px,
+  $color: $color-black
   );
 
   position: relative;
@@ -110,29 +114,29 @@ $padding-right: 40px;
 }
 .card__book-title {
   @include font-inter(
-    $font-size: 15px,
-    $font-weight: 700,
-    $line-height: 40px,
-    $letter-spacing: 2px
+  $font-size: 15px,
+  $font-weight: 700,
+  $line-height: 40px,
+  $letter-spacing: 2px
   );
 
   text-transform: uppercase;
 }
 .card__book-author {
   @include font-inter(
-    $font-size: 15px,
-    $font-weight: 700,
-    $line-height: 40px,
-    $letter-spacing: 2px
+  $font-size: 15px,
+  $font-weight: 700,
+  $line-height: 40px,
+  $letter-spacing: 2px
   );
 
   margin-bottom: 20px;
 }
 .card__book-description {
   @include font-inter(
-    $font-size: 15px,
-    $line-height: 40px,
-    $letter-spacing: 2px
+  $font-size: 15px,
+  $line-height: 40px,
+  $letter-spacing: 2px
   );
 
   margin-bottom: 15px;

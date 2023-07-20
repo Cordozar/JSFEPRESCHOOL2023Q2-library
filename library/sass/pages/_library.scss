@@ -1,8 +1,8 @@
 %form-input {
   @include font-forum(
-  $font-size: 30px,
-  $letter-spacing: 0.6px,
-  $color: $color-black
+    $font-size: 30px,
+    $letter-spacing: 0.6px,
+    $color: $color-black
   );
 
   display: block;
@@ -14,34 +14,38 @@
 
   &::placeholder {
     @include font-forum(
-    $font-size: 30px,
-    $letter-spacing: 0.6px,
-    $color: $color-grey
+      $font-size: 30px,
+      $letter-spacing: 0.6px,
+      $color: $color-grey
     );
   }
 }
 
 .welcome {
-  padding: 222px 840px 160px 0;
   background: linear-gradient(
-  180deg,
-  #0c0c0e 0%,
-  #0c0c0e 0.01%,
-  rgba(18, 18, 21, 0.1) 47%
-  ),
-  url('../img/welcome_bg.jfif');
+      180deg,
+      #0c0c0e 0%,
+      #0c0c0e 0.01%,
+      rgba(18, 18, 21, 0.1) 47%
+    ),
+    url('../img/welcome_bg.jfif');
   background-position: 0;
   background-size: cover;
 }
 
+.welcome__content {
+  padding: 222px 840px 160px 0;
+}
+
 .welcome__title {
   @include font-forum(
-  $font-size: 40px,
-  $line-height: 50px,
-  $letter-spacing: 3px,
-  $color: $color-white
+    $font-size: 40px,
+    $line-height: 50px,
+    $letter-spacing: 3px,
+    $color: $color-white
   );
 
+  display: inline-block;
   padding: 35px 80px;
   text-align: center;
   text-transform: uppercase;

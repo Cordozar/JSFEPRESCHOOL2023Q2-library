@@ -47,9 +47,13 @@
 
   <main>
     <section class="welcome">
-      <h2 class="welcome__title">
-        <span class="welcome__title-fist-line">Welcome</span> to the Brooklyn Library
-      </h2>
+        <div class="wrapper ">
+        <div class="welcome__content">
+          <h2 class="welcome__title">
+            <span class="welcome__title-fist-line">Welcome</span> to the Brooklyn Library
+          </h2>
+        </div>
+      </div>
     </section>
 
     <div class="wrapper">
@@ -91,24 +95,24 @@
             Pick favorites of season
           </div>
           <form class="sorter__form" action="#">
+            <input class="sorter__radio" checked type="radio" id="winter" name="season" value="winter">
             <label class="sorter__choice" for="winter">
-              <input class="sorter__radio" checked type="radio" id="winter" name="season" value="winter">
-              <span>Winter</span>
+              <span class="sorter__season">Winter</span>
               <span class="sorter__external-zone"></span>
             </label>
+            <input class="sorter__radio" type="radio" id="spring" name="season" value="spring">
             <label class="sorter__choice" for="spring">
-              <input class="sorter__radio" type="radio" id="spring" name="season" value="spring">
-              <span>Spring</span>
+              <span class="sorter__season">Spring</span>
               <span class="sorter__external-zone"></span>
             </label>
+            <input class="sorter__radio" type="radio" id="summer" name="season" value="summer">
             <label class="sorter__choice" for="summer">
-              <input class="sorter__radio" type="radio" id="summer" name="season" value="summer">
-              <span>Summer</span>
+              <span class="sorter__season">Summer</span>
               <span class="sorter__external-zone"></span>
             </label>
+            <input class="sorter__radio" type="radio" id="autumn" name="season" value="autumn">
             <label class="sorter__choice" for="autumn">
-              <input class="sorter__radio" type="radio" id="autumn" name="season" value="autumn">
-              <span>Autumn</span>
+              <span class="sorter__season">Autumn</span>
               <span class="sorter__external-zone"></span>
             </label>
           </form>
@@ -655,8 +659,8 @@
                 </div>
                 <input class="search-card__user-name" placeholder="Reader's name" type="search" name="user-name"
                   id="user-name">
-                <input class="search-card__card-number" pattern="[a-zA-Z0-9-]+" placeholder="Card number" type="search" name="card-number"
-                  id="card-number">
+                <input class="search-card__card-number" pattern="[a-zA-Z0-9-]+" placeholder="Card number" type="search"
+                  name="card-number" id="card-number">
               </div>
               <input class="search-card__search-btn btn btn_cards-btn" type="submit" value="Check the card">
             </form>
