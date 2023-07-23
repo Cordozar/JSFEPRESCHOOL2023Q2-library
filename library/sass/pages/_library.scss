@@ -22,6 +22,8 @@
 }
 
 .welcome {
+  padding-top: 220px;
+  padding-bottom: 161px;
   background: linear-gradient(
       180deg,
       #0c0c0e 0%,
@@ -34,7 +36,9 @@
 }
 
 .welcome__content {
-  padding: 222px 840px 160px 0;
+  display: inline-block;
+  padding: 222px 975px 161px 0;
+  background-color: $color-black;
 }
 
 .welcome__title {
@@ -45,11 +49,24 @@
     $color: $color-white
   );
 
-  display: inline-block;
-  padding: 35px 80px;
+  position: relative;
+  z-index: 5;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 35px 117px 35px 101px;
   text-align: center;
   text-transform: uppercase;
-  background-color: black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -100%;
+    z-index: -1;
+    background-color: $color-main-dark;
+  }
 }
 
 .welcome__title-fist-line {
@@ -119,7 +136,7 @@
 .contacts__staff {
   margin: 40px 0 20px 0;
   font-weight: 700;
-  letter-spacing: 2.4px;
+  letter-spacing: 2.1px;
 }
 .contacts__email {
   font-weight: 700;

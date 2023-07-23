@@ -41,8 +41,8 @@ a {
 
 .wrapper {
   max-width: 1440px;
-  padding: 0 20px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .layout-2-column {
@@ -51,7 +51,12 @@ a {
 }
 
 .section-title {
-  @include font-forum ($font-size: 4rem, $line-height: 40px, $letter-spacing: 2px, $color: $color-main-dark);
+  @include font-forum(
+    $font-size: 4rem,
+    $line-height: 40px,
+    $letter-spacing: 2px,
+    $color: $color-main-dark
+  );
 
   position: relative;
   text-align: center;

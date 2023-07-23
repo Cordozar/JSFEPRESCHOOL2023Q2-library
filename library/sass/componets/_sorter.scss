@@ -7,13 +7,13 @@ $padding-right: 40px;
 .sorter__description {
   @include font-inter($font-weight: 700, $letter-spacing: 0.1px);
 
-  margin-bottom: 43px;
+  margin-bottom: 45px;
 }
 .sorter__form {
-  justify-content: space-between;
   display: inline-flex;
+  justify-content: space-between;
   width: 703px;
-  margin-bottom: 43px;
+  margin-bottom: 42px;
 }
 .sorter__choice {
   position: relative;
@@ -47,7 +47,7 @@ $padding-right: 40px;
   & + .sorter__choice .sorter__season::after {
     content: '';
     position: absolute;
-    bottom: 4.5px;
+    bottom: 5px;
     left: 5px;
     display: none;
     width: 8px;
@@ -98,10 +98,10 @@ $padding-right: 40px;
 }
 .card__book-status {
   @include font-forum(
-  $font-size: 2rem,
-  $line-height: 40px,
-  $letter-spacing: 2px,
-  $color: $color-black
+    $font-size: 2rem,
+    $line-height: 40px,
+    $letter-spacing: 2px,
+    $color: $color-black
   );
 
   position: relative;
@@ -119,29 +119,29 @@ $padding-right: 40px;
 }
 .card__book-title {
   @include font-inter(
-  $font-size: 1.5rem,
-  $font-weight: 700,
-  $line-height: 40px,
-  $letter-spacing: 2px
+    $font-size: 1.5rem,
+    $font-weight: 700,
+    $line-height: 40px,
+    $letter-spacing: 2px
   );
 
   text-transform: uppercase;
 }
 .card__book-author {
   @include font-inter(
-  $font-size: 1.5rem,
-  $font-weight: 700,
-  $line-height: 40px,
-  $letter-spacing: 2px
+    $font-size: 1.5rem,
+    $font-weight: 700,
+    $line-height: 40px,
+    $letter-spacing: 2px
   );
 
   margin-bottom: 20px;
 }
 .card__book-description {
   @include font-inter(
-  $font-size: 1.5rem,
-  $line-height: 40px,
-  $letter-spacing: 2px
+    $font-size: 1.5rem,
+    $line-height: 40px,
+    $letter-spacing: 2px
   );
 
   margin-bottom: 15px;

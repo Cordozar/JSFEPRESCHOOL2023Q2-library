@@ -12,13 +12,13 @@
 }
 
 .header__icon-profile {
+  @extend %hover-for-icon;
+
   position: relative;
   width: 28px;
   height: 28px;
   background-image: url('../img/icon_profile.svg');
   cursor: pointer;
-
-  @extend %hover-for-icon;
 }
 
 .header__icon-profile-icon {

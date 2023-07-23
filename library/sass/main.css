@@ -9,7 +9,7 @@
   width: 0;
   height: 1px;
   margin-top: 3px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   transform: translateX(-50%);
   opacity: 0;
   transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -32,8 +32,8 @@
   transition-property: background-color, border-color;
 }
 .btn_access-log:hover, .btn_access-sing:hover, .btn_cards-btn:hover, .btn_card:hover {
-  background-color: #BB945F;
-  border-color: #BB945F;
+  background-color: #bb945f;
+  border-color: #bb945f;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -382,8 +382,8 @@ a {
 
 .wrapper {
   max-width: 1440px;
-  padding: 0 20px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .layout-2-column {
@@ -456,7 +456,7 @@ a {
   font-size: 2rem;
   line-height: normal;
   font-family: "Inter", sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: normal;
 }
 
@@ -481,7 +481,7 @@ a {
   font-size: 1.5rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: normal;
   display: inline-block;
   display: block;
@@ -505,8 +505,8 @@ a {
 }
 
 .footer__contacts-facebook {
-  transition: all 0.3s linear;
   background-image: url("../img/footer/facebook.svg");
+  transition: all 0.3s linear;
 }
 .footer__contacts-facebook:hover {
   transform: scale(1.2);
@@ -518,7 +518,7 @@ a {
   font-size: 1.5rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: normal;
   margin-bottom: 10px;
   text-align: right;
@@ -532,7 +532,7 @@ a {
   width: 100%;
   height: 1px;
   margin: 18px 0 46px 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .footer__layout-3 {
@@ -546,7 +546,7 @@ a {
   font-size: 2rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: 2px;
 }
 
@@ -556,7 +556,7 @@ a {
   font-size: 2rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: 2px;
   transform: translateX(23px);
 }
@@ -567,7 +567,7 @@ a {
   font-size: 2rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: 2px;
 }
 
@@ -577,7 +577,7 @@ a {
   font-size: 3rem;
   line-height: normal;
   font-family: "Forum", cursive;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: 0.6px;
 }
 
@@ -603,8 +603,8 @@ a {
   align-items: center;
   width: 26px;
   height: 26px;
-  cursor: pointer;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .slider__dot {
@@ -614,7 +614,7 @@ a {
   border-radius: 50%;
 }
 .slider__dot_select {
-  background-color: #BB945F;
+  background-color: #bb945f;
 }
 
 .sorter {
@@ -629,14 +629,14 @@ a {
   font-family: "Inter", sans-serif;
   color: black;
   letter-spacing: 0.1px;
-  margin-bottom: 43px;
+  margin-bottom: 45px;
 }
 
 .sorter__form {
-  justify-content: space-between;
   display: inline-flex;
+  justify-content: space-between;
   width: 703px;
-  margin-bottom: 43px;
+  margin-bottom: 42px;
 }
 
 .sorter__choice {
@@ -672,7 +672,7 @@ a {
 .sorter__radio + .sorter__choice .sorter__season::after {
   content: "";
   position: absolute;
-  bottom: 4.5px;
+  bottom: 5px;
   left: 5px;
   display: none;
   width: 8px;
@@ -735,7 +735,7 @@ a {
   left: 0;
   width: 58px;
   height: 0.5px;
-  background-color: #BB945F;
+  background-color: #bb945f;
 }
 
 .card__book-title {
@@ -802,8 +802,8 @@ a {
 }
 .btn_own {
   padding: 8px 24px;
-  color: #BB945F;
-  border-color: #BB945F;
+  color: #bb945f;
+  border-color: #bb945f;
 }
 .btn_cards-btn {
   padding: 9px 40px;
@@ -833,7 +833,7 @@ a {
   font-size: 4rem;
   line-height: 40px;
   font-family: "Forum", cursive;
-  color: #BB945F;
+  color: #bb945f;
   letter-spacing: 2px;
   margin-bottom: 40px;
   text-transform: capitalize;
@@ -864,7 +864,7 @@ a {
   width: 100px;
   height: 1px;
   margin: 0 58px;
-  background-color: #BB945F;
+  background-color: #bb945f;
 }
 
 .food__dollar {
@@ -903,13 +903,13 @@ a {
   width: 600px;
   padding: 19px 18px 26px 19px;
   border: 3px solid #bb945f;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .search-card__form-inputs {
-  padding: 20px 20px 25px 20px;
-  background-color: #BB945F;
   margin-bottom: 19px;
+  padding: 20px 20px 25px 20px;
+  background-color: #bb945f;
 }
 
 .search-card__library-name {
@@ -952,18 +952,22 @@ a {
   font-size: 30px;
   line-height: normal;
   font-family: "Forum", cursive;
-  color: #8E8E8E;
+  color: #8e8e8e;
   letter-spacing: 0.6px;
 }
 
 .welcome {
+  padding-top: 220px;
+  padding-bottom: 161px;
   background: linear-gradient(180deg, #0c0c0e 0%, #0c0c0e 0.01%, rgba(18, 18, 21, 0.1) 47%), url("../img/welcome_bg.jfif");
   background-position: 0;
   background-size: cover;
 }
 
 .welcome__content {
-  padding: 222px 840px 160px 0;
+  display: inline-block;
+  padding: 222px 975px 161px 0;
+  background-color: #000000;
 }
 
 .welcome__title {
@@ -972,13 +976,25 @@ a {
   font-size: 40px;
   line-height: 50px;
   font-family: "Forum", cursive;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: 3px;
-  display: inline-block;
-  padding: 35px 80px;
+  position: relative;
+  z-index: 5;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 35px 117px 35px 101px;
   text-align: center;
   text-transform: uppercase;
-  background-color: black;
+}
+.welcome__title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -100%;
+  z-index: -1;
+  background-color: #0c0c0e;
 }
 
 .welcome__title-fist-line {
@@ -1070,7 +1086,7 @@ a {
 .contacts__staff {
   margin: 40px 0 20px 0;
   font-weight: 700;
-  letter-spacing: 2.4px;
+  letter-spacing: 2.1px;
 }
 
 .contacts__email {
