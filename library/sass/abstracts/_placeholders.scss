@@ -1,32 +1,40 @@
-// %underline-for-link {
-//   content: '';
-//   position: absolute;
-//   top: 100%;
-//   left: 0;
-//   width: 100%;
-//   height: 3px;
-//   margin-top: 3px;
-//   background-color: $color-primary;
-// }
+%underline-for-link {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    margin-top: 3px;
+    background-color: $color-white;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+%hover-for-icon {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
 
 %transition-for-btn {
-  transition-property: background-color, border-color;
-  transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: background-color, border-color;
   &:hover {
     background-color: $color-primary;
     border-color: $color-primary;
   }
 }
-
-// %control-elem {
-//   display: flex;
-//   flex-shrink: 0;
-//   justify-content: center;
-//   align-items: center;
-//   width: 52px;
-//   height: 52px;
-//   border: 2px solid $color-primary;
-//   border-radius: 50%;
-//   cursor: pointer;
-// }

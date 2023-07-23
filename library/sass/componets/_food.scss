@@ -11,7 +11,12 @@
   }
 }
 .food__title {
-  @include font-forum($font-size: 40px, $line-height: 40px, $letter-spacing: 2px, $color: $color-primary);
+  @include font-forum(
+    $font-size: 4rem,
+    $line-height: 40px,
+    $letter-spacing: 2px,
+    $color: $color-primary
+  );
 
   margin-bottom: 40px;
   text-transform: capitalize;
@@ -27,6 +32,7 @@
 }
 .food__name {
   @include font-inter($line-height: 40px, $letter-spacing: 2px);
+
   text-transform: capitalize;
 }
 .food__separator {
@@ -40,5 +46,5 @@
   @include font-inter($line-height: 40px);
 }
 .foot__price {
-  @include font-inter($font-size: 18px, $line-height: 40px);
+  @include font-inter($font-size: 2rem, $line-height: 40px);
 }

@@ -1,5 +1,5 @@
 @mixin font-inter(
-  $font-size: 20px,
+  $font-size: 2rem,
   $font-weight: 400,
   $font-style: normal,
   $line-height: normal,
@@ -16,7 +16,7 @@
 }
 
 @mixin font-forum(
-  $font-size: 20px,
+  $font-size: 2rem,
   $font-weight: 400,
   $font-style: normal,
   $line-height: normal,
@@ -43,7 +43,7 @@
   $background-color: $color-primary,
   $padding: 16px 45px
 ) {
-  @include font-georgia($font-size: 17px);
+  @include font-georgia($font-size: 1.7rem);
 
   display: inline-block;
   padding: $padding;

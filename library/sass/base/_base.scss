@@ -51,7 +51,7 @@ a {
 }
 
 .section-title {
-  @include font-forum ($font-size: 40px, $line-height: 40px, $letter-spacing: 2px, $color: $color-main-dark);
+  @include font-forum ($font-size: 4rem, $line-height: 40px, $letter-spacing: 2px, $color: $color-main-dark);
 
   position: relative;
   text-align: center;

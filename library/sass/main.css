@@ -1,7 +1,35 @@
+.footer__githab, .footer__rss, .footer-contacts-location, .nav__link {
+  position: relative;
+}
+.footer__githab:after, .footer__rss:after, .footer-contacts-location:after, .nav__link:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  margin-top: 3px;
+  background-color: #FFFFFF;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.footer__githab:hover::after, .footer__rss:hover::after, .footer-contacts-location:hover::after, .nav__link:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+.footer__contacts-facebook, .footer__contacts-inst, .footer__contacts-twitter, .header__icon-profile {
+  transition: transform 0.3s ease-in-out;
+}
+.footer__contacts-facebook:hover, .footer__contacts-inst:hover, .footer__contacts-twitter:hover, .header__icon-profile:hover {
+  transform: scale(1.2);
+}
+
 .btn_access-log, .btn_access-sing, .btn_cards-btn, .btn_card {
-  transition-property: background-color, border-color;
-  transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: background-color, border-color;
 }
 .btn_access-log:hover, .btn_access-sing:hover, .btn_cards-btn:hover, .btn_card:hover {
   background-color: #BB945F;
@@ -366,7 +394,7 @@ a {
 .section-title {
   font-style: normal;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 4rem;
   line-height: 40px;
   font-family: "Forum", cursive;
   color: #0c0c0e;
@@ -398,12 +426,20 @@ a {
 }
 
 .header__nav {
-  margin-left: auto;
   margin-right: 40px;
+  margin-left: auto;
 }
 
-.header__icon-profile-icon path {
-  fill: #BB945F !important;
+.header__icon-profile {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/icon_profile.svg");
+  cursor: pointer;
+}
+
+.header__icon-profile-icon {
+  display: inline-block;
 }
 
 .nav__list {
@@ -417,29 +453,11 @@ a {
 .nav__link {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: normal;
   font-family: "Inter", sans-serif;
   color: #FFFFFF;
   letter-spacing: normal;
-  position: relative;
-}
-.nav__link:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  margin-top: 3px;
-  background-color: #FFFFFF;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-.nav__link:hover::after {
-  width: 100%;
-  opacity: 1;
 }
 
 .footer__contacts-facebook, .footer__contacts-inst, .footer__contacts-twitter {
@@ -460,11 +478,12 @@ a {
 .footer-contacts-location {
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
   color: #FFFFFF;
   letter-spacing: normal;
+  display: inline-block;
   display: block;
   margin-bottom: 18px;
 }
@@ -486,13 +505,17 @@ a {
 }
 
 .footer__contacts-facebook {
+  transition: all 0.3s linear;
   background-image: url("../img/footer/facebook.svg");
+}
+.footer__contacts-facebook:hover {
+  transform: scale(1.2);
 }
 
 .footer__schedule {
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
   color: #FFFFFF;
@@ -508,7 +531,7 @@ a {
 .footer__separator {
   width: 100%;
   height: 1px;
-  margin: 20px 0 44px 0;
+  margin: 18px 0 46px 0;
   background-color: #FFFFFF;
 }
 
@@ -520,7 +543,7 @@ a {
 .footer__year {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
   color: #FFFFFF;
@@ -530,7 +553,7 @@ a {
 .footer__rss {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
   color: #FFFFFF;
@@ -541,7 +564,7 @@ a {
 .footer__githab {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 20px;
   font-family: "Inter", sans-serif;
   color: #FFFFFF;
@@ -551,7 +574,7 @@ a {
 .logo__link {
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 3rem;
   line-height: normal;
   font-family: "Forum", cursive;
   color: #FFFFFF;
@@ -601,7 +624,7 @@ a {
 .sorter__description {
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: normal;
   font-family: "Inter", sans-serif;
   color: black;
@@ -610,7 +633,9 @@ a {
 }
 
 .sorter__form {
-  display: flex;
+  justify-content: space-between;
+  display: inline-flex;
+  width: 703px;
   margin-bottom: 43px;
 }
 
@@ -619,17 +644,13 @@ a {
   display: flex;
   align-items: center;
 }
-.sorter__choice:not(:last-child) {
-  margin-right: 90px;
-}
-
 .sorter__radio {
   display: none;
 }
 .sorter__radio + .sorter__choice .sorter__season {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 0.9;
   font-family: "Inter", sans-serif;
   color: black;
@@ -660,7 +681,7 @@ a {
   border-radius: 50%;
 }
 .sorter__radio:checked + .sorter__choice .sorter__season {
-  padding-left: 36.5px;
+  padding-left: 33.5px;
   font-weight: 700;
 }
 .sorter__radio:checked + .sorter__choice .sorter__season::after {
@@ -699,7 +720,7 @@ a {
 .card__book-status {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 40px;
   font-family: "Forum", cursive;
   color: #000000;
@@ -720,7 +741,7 @@ a {
 .card__book-title {
   font-style: normal;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -731,7 +752,7 @@ a {
 .card__book-author {
   font-style: normal;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -742,7 +763,7 @@ a {
 .card__book-description {
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -765,7 +786,7 @@ a {
 .btn {
   font-style: normal;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 1rem;
   line-height: normal;
   font-family: "Inter", sans-serif;
   color: #0c0c0e;
@@ -786,7 +807,7 @@ a {
 }
 .btn_cards-btn {
   padding: 9px 40px;
-  font-size: 20px;
+  font-size: 2rem;
   cursor: pointer;
 }
 .btn_access-sing {
@@ -809,7 +830,7 @@ a {
 .food__title {
   font-style: normal;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 4rem;
   line-height: 40px;
   font-family: "Forum", cursive;
   color: #BB945F;
@@ -830,7 +851,7 @@ a {
 .food__name {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -849,7 +870,7 @@ a {
 .food__dollar {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -859,7 +880,7 @@ a {
 .foot__price {
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 2rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -869,7 +890,7 @@ a {
 .search-card__title {
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 3rem;
   line-height: normal;
   font-family: "Inter", sans-serif;
   color: black;
@@ -894,7 +915,7 @@ a {
 .search-card__library-name {
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 3rem;
   line-height: 50px;
   font-family: "Forum", cursive;
   color: black;
@@ -976,7 +997,7 @@ a {
 .about__description {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -1004,7 +1025,7 @@ a {
 .shop__description {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -1024,7 +1045,7 @@ a {
 .contacts__info {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
@@ -1086,7 +1107,7 @@ a {
 .cards__access-description {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 40px;
   font-family: "Inter", sans-serif;
   color: black;
