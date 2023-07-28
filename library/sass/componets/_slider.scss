@@ -6,6 +6,11 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
+  flex-wrap: wrap;
+
+  @media (max-width: 940px) {
+    justify-content: center;
+  }
 }
 .slider__slide {
 }

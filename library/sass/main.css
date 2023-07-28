@@ -356,6 +356,7 @@ html {
 }
 
 body {
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -444,6 +445,7 @@ a {
 
 .nav__list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .nav__item:not(:last-child) {
@@ -590,6 +592,12 @@ a {
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+@media (max-width: 940px) {
+  .slider__wrapper {
+    justify-content: center;
+  }
 }
 
 .slider__pagination {
@@ -702,6 +710,11 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 40px;
+}
+@media (max-width: 1180px) {
+  .sorter__cards-wrapper {
+    justify-content: center;
+  }
 }
 
 .card {
@@ -992,7 +1005,7 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  left: -100%;
+  left: 0;
   z-index: -1;
   background-color: #0c0c0e;
 }

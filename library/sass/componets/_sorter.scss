@@ -34,7 +34,7 @@ $padding-right: 40px;
     padding-left: $distance;
     cursor: pointer;
   }
-  & + .sorter__choice .sorter__season::before {
+  & + .sorter__choice .sorter__season::before { 
     content: '';
     position: absolute;
     bottom: 0;
@@ -80,6 +80,10 @@ $padding-right: 40px;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 40px;
+
+   @media (max-width: 1180px) {
+    justify-content: center;
+  }
 }
 .sorter__card {
 }
