@@ -34,7 +34,7 @@ $padding-right: 40px;
     padding-left: $distance;
     cursor: pointer;
   }
-  & + .sorter__choice .sorter__season::before { 
+  & + .sorter__choice .sorter__season::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -68,10 +68,11 @@ $padding-right: 40px;
   & + .sorter__choice .sorter__external-zone {
     content: '';
     position: absolute;
+    top: 50%;
     display: block;
-    width: 30px;
-    height: 30px;
-    transform: translateX(-5.5px);
+    width: 26px;
+    height: 26px;
+    transform: translate(-4.5px, -50%);
     cursor: pointer;
   }
 }
@@ -81,7 +82,7 @@ $padding-right: 40px;
   justify-content: space-between;
   row-gap: 40px;
 
-   @media (max-width: 1180px) {
+  @media (max-width: 1180px) {
     justify-content: center;
   }
 }
@@ -102,10 +103,10 @@ $padding-right: 40px;
 }
 .card__book-status {
   @include font-forum(
-    $font-size: 2rem,
-    $line-height: 40px,
-    $letter-spacing: 2px,
-    $color: $color-black
+  $font-size: 2rem,
+  $line-height: 40px,
+  $letter-spacing: 2px,
+  $color: $color-black
   );
 
   position: relative;
@@ -123,29 +124,29 @@ $padding-right: 40px;
 }
 .card__book-title {
   @include font-inter(
-    $font-size: 1.5rem,
-    $font-weight: 700,
-    $line-height: 40px,
-    $letter-spacing: 2px
+  $font-size: 1.5rem,
+  $font-weight: 700,
+  $line-height: 40px,
+  $letter-spacing: 2px
   );
 
   text-transform: uppercase;
 }
 .card__book-author {
   @include font-inter(
-    $font-size: 1.5rem,
-    $font-weight: 700,
-    $line-height: 40px,
-    $letter-spacing: 2px
+  $font-size: 1.5rem,
+  $font-weight: 700,
+  $line-height: 40px,
+  $letter-spacing: 2px
   );
 
   margin-bottom: 20px;
 }
 .card__book-description {
   @include font-inter(
-    $font-size: 1.5rem,
-    $line-height: 40px,
-    $letter-spacing: 2px
+  $font-size: 1.5rem,
+  $line-height: 40px,
+  $letter-spacing: 2px
   );
 
   margin-bottom: 15px;

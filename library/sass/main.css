@@ -698,10 +698,11 @@ a {
 .sorter__radio + .sorter__choice .sorter__external-zone {
   content: "";
   position: absolute;
+  top: 50%;
   display: block;
-  width: 30px;
-  height: 30px;
-  transform: translateX(-5.5px);
+  width: 26px;
+  height: 26px;
+  transform: translate(-4.5px, -50%);
   cursor: pointer;
 }
 
