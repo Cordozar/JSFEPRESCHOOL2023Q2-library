@@ -973,7 +973,7 @@ a {
 .welcome {
   padding-top: 220px;
   padding-bottom: 161px;
-  background: linear-gradient(180deg, #0c0c0e 0%, #0c0c0e 0.01%, rgba(18, 18, 21, 0.1) 47%), url("../img/welcome_bg.jfif");
+  background: linear-gradient(180deg, #0c0c0e 0%, #0c0c0e 0.01%, rgba(18, 18, 21, 0.1) 47%), url("../img/welcome_bg.jpg");
   background-position: 0;
   background-size: cover;
 }
