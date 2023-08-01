@@ -1,5 +1,6 @@
 $distance: 38px;
 $padding-right: 40px;
+$padding-for-label: 5px;
 
 .sorter {
   padding-right: $padding-right;
@@ -7,22 +8,22 @@ $padding-right: 40px;
 .sorter__description {
   @include font-inter($font-weight: 700, $letter-spacing: 0.1px);
 
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 .sorter__form {
   display: inline-flex;
   justify-content: space-between;
-  width: 703px;
-  margin-bottom: 42px;
+  width: 710px;
+  margin-bottom: 37px;
+  position: relative;
+  left: -$padding-for-label;
 }
 .sorter__choice {
   position: relative;
   display: flex;
   align-items: center;
-
-  &:not(:last-child) {
-    // margin-right: 90px;
-  }
+  padding: $padding-for-label;
+  cursor: pointer;
 }
 .sorter__radio {
   display: none;
@@ -32,7 +33,6 @@ $padding-right: 40px;
 
     position: relative;
     padding-left: $distance;
-    cursor: pointer;
   }
   & + .sorter__choice .sorter__season::before {
     content: '';
@@ -55,11 +55,8 @@ $padding-right: 40px;
     background-color: $color-black;
     border-radius: 50%;
   }
-  &:checked + .sorter__choice {
-    // margin-right: 88px;
-  }
   &:checked + .sorter__choice .sorter__season {
-    padding-left: 33.5px;
+    padding-left: $distance - 4.5px;
     font-weight: 700;
   }
   &:checked + .sorter__choice .sorter__season::after {

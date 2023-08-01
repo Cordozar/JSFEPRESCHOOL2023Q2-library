@@ -637,21 +637,26 @@ a {
   font-family: "Inter", sans-serif;
   color: black;
   letter-spacing: 0.1px;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
 .sorter__form {
   display: inline-flex;
   justify-content: space-between;
-  width: 703px;
-  margin-bottom: 42px;
+  width: 710px;
+  margin-bottom: 37px;
+  position: relative;
+  left: -5px;
 }
 
 .sorter__choice {
   position: relative;
   display: flex;
   align-items: center;
+  padding: 5px;
+  cursor: pointer;
 }
+
 .sorter__radio {
   display: none;
 }
@@ -665,7 +670,6 @@ a {
   letter-spacing: normal;
   position: relative;
   padding-left: 38px;
-  cursor: pointer;
 }
 .sorter__radio + .sorter__choice .sorter__season::before {
   content: "";
