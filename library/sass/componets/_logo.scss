@@ -1,3 +1,9 @@
+.logo {
+  @include media-large-tablet {
+    margin-right: auto;
+  }
+}
+
 .logo__link {
   @include font-forum(
     $font-size: 3rem,

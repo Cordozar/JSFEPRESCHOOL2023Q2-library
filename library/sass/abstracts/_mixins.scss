@@ -54,8 +54,13 @@
   cursor: pointer;
 }
 
-@mixin media-laptop {
-  @media (max-width: $content-width) {
+@mixin media-intermediate-tablet {
+  @media (max-width: $intermediate-width) {
+    @content;
+  }
+}
+@mixin media-large-tablet {
+  @media (max-width: $large-tablet-width) {
     @content;
   }
 }
@@ -64,13 +69,10 @@
     @content;
   }
 }
-@mixin media-mobile {
-  @media (max-width: $mobile-width) {
-    @content;
-  }
-}
-@mixin media-hover {
-  @media (hover: hover) {
-    @content;
-  }
-}
+
+
+// @mixin media-hover {
+//   @media (hover: hover) {
+//     @content;
+//   }
+// }

@@ -8,6 +8,10 @@
   padding: 21px 0 44px;
   background-color: $color-main-dark;
 }
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+}
 .footer-contacts {
   width: 229px;
 }
@@ -94,6 +98,9 @@
     $letter-spacing: 2px,
     $color: $color-white
   );
+  @include media-intermediate-tablet {
+    padding-right: 50px;
+  }
 
   @extend %underline-for-link;
 

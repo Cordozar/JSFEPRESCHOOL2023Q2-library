@@ -36,6 +36,16 @@
   border-color: #bb945f;
 }
 
+.cards__content, .contacts__content, .shop__menu {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1260px) {
+  .cards__content, .contacts__content, .shop__menu {
+    flex-direction: column;
+  }
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -443,6 +453,22 @@ a {
   display: inline-block;
 }
 
+.header__burger {
+  display: none;
+  margin-left: 40px;
+}
+@media (max-width: 1025px) {
+  .header__burger {
+    display: block;
+  }
+}
+
+@media (max-width: 1025px) {
+  .nav {
+    display: none;
+  }
+}
+
 .nav__list {
   display: flex;
   flex-wrap: wrap;
@@ -471,6 +497,11 @@ a {
 .footer {
   padding: 21px 0 44px;
   background-color: #0c0c0e;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-contacts {
@@ -562,6 +593,11 @@ a {
   letter-spacing: 2px;
   transform: translateX(23px);
 }
+@media (max-width: 1260px) {
+  .footer__rss {
+    padding-right: 50px;
+  }
+}
 
 .footer__githab {
   font-style: normal;
@@ -571,6 +607,12 @@ a {
   font-family: "Inter", sans-serif;
   color: #ffffff;
   letter-spacing: 2px;
+}
+
+@media (max-width: 1025px) {
+  .logo {
+    margin-right: auto;
+  }
 }
 
 .logo__link {
@@ -583,36 +625,81 @@ a {
   letter-spacing: 0.6px;
 }
 
+.slide__right-arrow, .slide__left-arrow {
+  display: none;
+}
+@media (max-width: 1439px) {
+  .slide__right-arrow, .slide__left-arrow {
+    display: block;
+  }
+}
+
 .slider {
   display: flex;
   flex-direction: column;
 }
 
+.slider__content {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1439px) {
+  .slider__content {
+    align-self: center;
+  }
+}
+
 .slider__wrapper {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 35px;
-  flex-wrap: wrap;
+  overflow: hidden;
+  column-gap: 25px;
 }
-@media (max-width: 940px) {
+@media (max-width: 1439px) {
   .slider__wrapper {
-    justify-content: center;
+    width: 450px;
+    column-gap: 0;
   }
+}
+
+.slide__left-arrow {
+  margin-right: 58px;
+}
+
+.slide__right-arrow {
+  margin-left: 58px;
+}
+
+.slider__slide {
+  display: block;
 }
 
 .slider__pagination {
   display: flex;
-  margin: 0 auto;
+  margin: 35px auto 0;
+}
+@media (max-width: 1025px) {
+  .slider__pagination {
+    margin: 21px auto 0;
+  }
 }
 
 .slider__dot-wrapper {
   display: inline-flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 26px;
   height: 26px;
   border-radius: 50%;
   cursor: pointer;
+}
+.slider__dot-wrapper:nth-child(-n+3) {
+  display: block;
+}
+@media (max-width: 1439px) {
+  .slider__dot-wrapper {
+    display: block;
+  }
 }
 
 .slider__dot {
@@ -641,12 +728,12 @@ a {
 }
 
 .sorter__form {
+  position: relative;
+  left: -5px;
   display: inline-flex;
   justify-content: space-between;
   width: 710px;
   margin-bottom: 37px;
-  position: relative;
-  left: -5px;
 }
 
 .sorter__choice {
@@ -716,9 +803,10 @@ a {
   justify-content: space-between;
   row-gap: 40px;
 }
-@media (max-width: 1180px) {
+@media (max-width: 1260px) {
   .sorter__cards-wrapper {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -727,9 +815,13 @@ a {
   display: none;
   flex-direction: column;
   width: 550px;
-  height: 555px;
   padding: 15px 172px 14px 20px;
   border: 1px solid #000000;
+}
+@media (max-width: 1260px) {
+  .card {
+    height: 555px;
+  }
 }
 .card:nth-child(-n+4) {
   display: flex;
@@ -837,6 +929,11 @@ a {
   cursor: pointer;
 }
 
+@media (max-width: 1260px) {
+  .food_drink-list {
+    width: 438px;
+  }
+}
 .food_drink-list .food__item .food__name {
   margin-right: auto;
 }
@@ -883,6 +980,11 @@ a {
   height: 1px;
   margin: 0 58px;
   background-color: #bb945f;
+}
+@media (max-width: 1260px) {
+  .food__separator {
+    margin: 0 56px;
+  }
 }
 
 .food__dollar {
@@ -947,6 +1049,37 @@ a {
 
 .search-card__search-btn {
   margin: 0 auto;
+}
+
+.burger {
+  position: relative;
+  width: 45px;
+  height: 20px;
+  cursor: pointer;
+}
+.burger__line {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  transform: translateY(-50%);
+}
+.burger::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+}
+.burger::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
 }
 
 .search-card__user-name, .search-card__card-number {
@@ -1067,6 +1200,17 @@ a {
   margin-bottom: 40px;
   text-align: center;
 }
+@media (max-width: 1260px) {
+  .shop__description {
+    letter-spacing: 1.9px;
+  }
+}
+
+@media (max-width: 1025px) and (max-width: 1025px) {
+  .shop__menu {
+    row-gap: 40px;
+  }
+}
 
 .contacts {
   padding: 20px 0 40px;
@@ -1074,6 +1218,12 @@ a {
 
 .contacts__title {
   margin-bottom: 61px;
+}
+
+@media (max-width: 1260px) {
+  .contacts__content {
+    row-gap: 100px;
+  }
 }
 
 .contacts__info {
@@ -1112,6 +1262,10 @@ a {
   color: #000000;
 }
 
+.contacts__map {
+  padding: 0 15.5px;
+}
+
 .cards {
   padding: 20px 0 41px 0;
 }
@@ -1120,11 +1274,24 @@ a {
   margin-bottom: 61px;
 }
 
+@media (max-width: 1260px) {
+  .cards__content {
+    align-items: center;
+    row-gap: 21px;
+  }
+}
+
 .cards__access-management {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 456px;
+}
+@media (max-width: 1260px) {
+  .cards__access-management {
+    align-items: center;
+    width: 600px;
+  }
 }
 
 .cards__access-title {
@@ -1137,6 +1304,11 @@ a {
   letter-spacing: 0.6px;
   margin-bottom: 35px;
 }
+@media (max-width: 1260px) {
+  .cards__access-title {
+    margin-bottom: 40px;
+  }
+}
 
 .cards__access-description {
   font-style: normal;
@@ -1148,6 +1320,12 @@ a {
   letter-spacing: 0.4px;
   margin-bottom: 35px;
   text-align: right;
+}
+@media (max-width: 1260px) {
+  .cards__access-description {
+    margin-bottom: 40px;
+    text-align: center;
+  }
 }
 
 .cards__access-btns {

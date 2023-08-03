@@ -1,3 +1,5 @@
+@import 'mixins';
+
 %underline-for-link {
   position: relative;
 
@@ -37,4 +39,13 @@
     background-color: $color-primary;
     border-color: $color-primary;
   }
+}
+
+%layout-2-column {
+  @include media-intermediate-tablet {
+    flex-direction: column;
+  }
+
+  display: flex;
+  justify-content: space-between;
 }

@@ -37,19 +37,19 @@
           </li>
         </ul>
       </nav>
-      <div class="header__icon-profile">
-      </div>
+      <div class="header__icon-profile"></div>
+      <div class="header__burger burger"><div class="burger__line"></div></div>
     </div>
   </header>
 
   <main>
     <section class="welcome">
-        <div class="wrapper">
-          <h2 class="welcome__title">
-            <span class="welcome__title-fist-line">Welcome</span> to the Brooklyn
-            <span>library</span>
-          </h2>
-        </div>
+      <div class="wrapper">
+        <h2 class="welcome__title">
+          <span class="welcome__title-fist-line">Welcome</span> to the Brooklyn
+          <span>library</span>
+        </h2>
+      </div>
     </section>
 
     <div class="wrapper">
@@ -61,14 +61,30 @@
           The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
         </p>
         <div class="slider">
-          <div class="slider__wrapper">
-            <img class="slider__slide" src="./img/slider/slider-1.png" alt="slide">
-            <img class="slider__slide" src="./img/slider/slider-2.png" alt="slide">
-            <img class="slider__slide" src="./img/slider/slider-3.png" alt="slide">
+          <div class="slider__content">
+            <div class="slide__left-arrow">
+              <img src="./img/slider/Carret_Left.svg" alt="arrow left">
+            </div>
+            <div class="slider__wrapper">
+              <img class="slider__slide" src="./img/slider/slider-1.png" alt="slide">
+              <img class="slider__slide" src="./img/slider/slider-2.png" alt="slide">
+              <img class="slider__slide" src="./img/slider/slider-3.png" alt="slide">
+              <img class="slider__slide" src="./img/slider/slider-4.png" alt="slide">
+              <img class="slider__slide" src="./img/slider/slider-5.png" alt="slide">
+            </div>
+            <div class="slide__right-arrow">
+              <img src="./img/slider/Carret_Right.svg" alt="arrow right">
+            </div>
           </div>
           <div class="slider__pagination">
             <div class="slider__dot-wrapper">
               <div class="slider__dot slider__dot_select"></div>
+            </div>
+            <div class="slider__dot-wrapper">
+              <div class="slider__dot"></div>
+            </div>
+            <div class="slider__dot-wrapper">
+              <div class="slider__dot"></div>
             </div>
             <div class="slider__dot-wrapper">
               <div class="slider__dot"></div>
@@ -94,22 +110,18 @@
             <input class="sorter__radio" checked type="radio" id="winter" name="season" value="winter">
             <label class="sorter__choice" for="winter">
               <span class="sorter__season">Winter</span>
-              <!-- <span class="sorter__external-zone"></span> -->
             </label>
             <input class="sorter__radio" type="radio" id="spring" name="season" value="spring">
             <label class="sorter__choice" for="spring">
               <span class="sorter__season">Spring</span>
-              <!-- <span class="sorter__external-zone"></span> -->
             </label>
             <input class="sorter__radio" type="radio" id="summer" name="season" value="summer">
             <label class="sorter__choice" for="summer">
               <span class="sorter__season">Summer</span>
-              <!-- <span class="sorter__external-zone"></span> -->
             </label>
             <input class="sorter__radio" type="radio" id="autumn" name="season" value="autumn">
             <label class="sorter__choice" for="autumn">
               <span class="sorter__season">Autumn</span>
-              <!-- <span class="sorter__external-zone"></span> -->
             </label>
           </form>
           <div class="sorter__cards-wrapper">
@@ -444,7 +456,7 @@
           conversation. You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and
           also you can try desserts from bakery.
         </p>
-        <div class="layout-2-column">
+        <div class="shop__menu">
           <div class="shop__food food food_drink-list">
             <h4 class="food__title">
               Coffee & Tea
@@ -608,7 +620,7 @@
         <h2 class="contacts__title section-title">
           Our Contacts
         </h2>
-        <div class="layout-2-column">
+        <div class="contacts__content">
           <div class="contacts__info">
             <div class="contacts__description">
               For all Library inquiries:
@@ -633,7 +645,7 @@
               <a class="contacts__email" href="mailto:AmandaHirst@gmail.com">Amanda Hirst</a>
             </div>
           </div>
-          <img src="./img/map.jpg" alt="map">
+          <img class="contacts__map" src="./img/map.jpg" alt="map">
         </div>
       </section>
     </div>
@@ -643,7 +655,7 @@
         <h2 class="cards__title section-title">
           Digital Library Cards
         </h2>
-        <div class="layout-2-column">
+        <div class="cards__content">
           <div class="cards__search-card search-card">
             <div class="search-card__title">
               Find your Library card
@@ -680,7 +692,7 @@
 
   <footer class="footer">
     <div class="wrapper">
-      <div class="layout-2-column">
+      <div class="footer__content">
         <div class="footer-contacts">
           <a class="footer-contacts-location" target="_blank"
             href="https://www.google.com/maps/place/286+Cadman+Plaza+W,+Brooklyn,+NY+11201,+USA/@40.6956458,-73.9912976,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25a49b649b8c3:0x6342a2291cea2e!8m2!3d40.6956458!4d-73.9912976!16s%2Fg%2F11s2lgz8ns?entry=ttu">286
@@ -694,7 +706,8 @@
               <a class="footer__contacts-inst" target="_blank" href="https://www.instagram.com/yura_samsonenko/"></a>
             </li>
             <li class="footer__contacts-item">
-              <a class="footer__contacts-facebook" target="_blank" href="https://www.facebook.com/zuck/?locale=ru_RU"></a>
+              <a class="footer__contacts-facebook" target="_blank"
+                href="https://www.facebook.com/zuck/?locale=ru_RU"></a>
             </li>
           </ul>
         </div>
@@ -717,7 +730,7 @@
         <a class="footer__rss" href="https://rs.school/js-stage0/" target="_blank">
           The Rolling Scopes School
         </a>
-        <a class="footer__githab" href="https://github.com/" target="_blank">
+        <a class="footer__githab" href="https://github.com/Cordozar" target="_blank">
           Cordozar
         </a>
       </div>

@@ -24,3 +24,12 @@
 .header__icon-profile-icon {
   display: inline-block;
 }
+
+.header__burger {
+  display: none;
+  margin-left: 40px;
+
+  @include media-large-tablet {
+    display: block;
+  }
+}
