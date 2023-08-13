@@ -1,6 +1,10 @@
 .food {
 }
 .food_drink-list {
+  @include media-intermediate-tablet {
+    width: 438px;
+  }
+
   & .food__item .food__name {
     margin-right: auto;
   }
@@ -12,10 +16,10 @@
 }
 .food__title {
   @include font-forum(
-    $font-size: 4rem,
-    $line-height: 40px,
-    $letter-spacing: 2px,
-    $color: $color-primary
+  $font-size: 4rem,
+  $line-height: 40px,
+  $letter-spacing: 2px,
+  $color: $color-primary
   );
 
   margin-bottom: 40px;
@@ -36,6 +40,10 @@
   text-transform: capitalize;
 }
 .food__separator {
+  @include media-intermediate-tablet {
+    margin: 0 56px;
+  }
+
   display: inline-block;
   width: 100px;
   height: 1px;

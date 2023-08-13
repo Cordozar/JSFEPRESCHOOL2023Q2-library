@@ -1,8 +1,8 @@
 %form-input {
   @include font-forum(
-    $font-size: 30px,
-    $letter-spacing: 0.6px,
-    $color: $color-black
+  $font-size: 30px,
+  $letter-spacing: 0.6px,
+  $color: $color-black
   );
 
   display: block;
@@ -14,9 +14,9 @@
 
   &::placeholder {
     @include font-forum(
-      $font-size: 30px,
-      $letter-spacing: 0.6px,
-      $color: $color-grey
+    $font-size: 30px,
+    $letter-spacing: 0.6px,
+    $color: $color-grey
     );
   }
 }
@@ -25,12 +25,12 @@
   padding-top: 220px;
   padding-bottom: 161px;
   background: linear-gradient(
-      180deg,
-      #0c0c0e 0%,
-      #0c0c0e 0.01%,
-      rgba(18, 18, 21, 0.1) 47%
-    ),
-    url('../img/welcome_bg.jpg');
+  180deg,
+  #0c0c0e 0%,
+  #0c0c0e 0.01%,
+  rgba(18, 18, 21, 0.1) 47%
+  ),
+  url('../img/welcome_bg.jpg');
   background-position: 0;
   background-size: cover;
 }
@@ -43,10 +43,10 @@
 
 .welcome__title {
   @include font-forum(
-    $font-size: 40px,
-    $line-height: 50px,
-    $letter-spacing: 3px,
-    $color: $color-white
+  $font-size: 40px,
+  $line-height: 50px,
+  $letter-spacing: 3px,
+  $color: $color-white
   );
 
   position: relative;
@@ -105,6 +105,19 @@
 
   margin-bottom: 40px;
   text-align: center;
+
+  @media (max-width: $intermediate-width) {
+    letter-spacing: 1.9px;
+  }
+}
+.shop__menu {
+  @include media-large-tablet {
+    @media (max-width: $large-tablet-width) {
+      row-gap: 40px;
+    }
+  }
+
+  @extend %layout-2-column;
 }
 .shop__food {
 }
@@ -114,6 +127,12 @@
 }
 .contacts__title {
   margin-bottom: 61px;
+}
+.contacts__content {
+  @extend %layout-2-column;
+  @media (max-width: $intermediate-width) {
+    row-gap: 100px;
+  }
 }
 .contacts__info {
   @include font-inter($line-height: 40px, $letter-spacing: 2px);
@@ -142,12 +161,22 @@
   font-weight: 700;
   color: $color-black;
 }
+.contacts__map {
+  padding: 0 15.5px;
+}
 
 .cards {
   padding: 20px 0 41px 0;
 }
 .cards__title {
   margin-bottom: 61px;
+}
+.cards__content {
+  @extend %layout-2-column;
+  @media (max-width: $intermediate-width) {
+    align-items: center;
+    row-gap: 21px;
+  }
 }
 .cards__search-card {
 }
@@ -156,17 +185,30 @@
   flex-direction: column;
   align-items: flex-end;
   width: 456px;
+  @media (max-width: $intermediate-width) {
+    align-items: center;
+    width: 600px;
+  }
 }
 .cards__access-title {
   @include font-forum($font-size: 30px, $letter-spacing: 0.6px);
 
   margin-bottom: 35px;
+
+  @media (max-width:$intermediate-width) {
+    margin-bottom: 40px;
+  }
 }
 .cards__access-description {
   @include font-inter($line-height: 40px, $letter-spacing: 0.4px);
 
   margin-bottom: 35px;
   text-align: right;
+
+  @media (max-width: $intermediate-width) {
+    margin-bottom: 40px;
+    text-align: center;
+  }
 }
 .cards__access-btns {
   display: flex;

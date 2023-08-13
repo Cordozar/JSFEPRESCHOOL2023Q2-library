@@ -1,12 +1,37 @@
 .nav {
+  @include media-large-tablet {
+    position: fixed;
+    top: 0;
+    right: -332px;
+    padding: 100px 107px;
+    background-color: $color-main-dark;
+    z-index: 7;
+    transition: right .3s linear;
+  }
+
+  &_active {
+    right: 0;
+  }
 }
 .nav__list {
+  @include media-large-tablet {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+  }
+
   display: flex;
   flex-wrap: wrap;
 }
+
 .nav__item {
   &:not(:last-child) {
     margin-right: 30px;
+  }
+  @include media-large-tablet {
+    &:not(:last-child) {
+      margin-right: 0;
+    }
   }
 }
 .nav__link {
