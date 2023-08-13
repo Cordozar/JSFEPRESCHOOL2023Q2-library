@@ -1,34 +1,54 @@
 .burger {
-
   position: relative;
   width: 45px;
-  height: 20px;
+  height: 32px;
   cursor: pointer;
+  z-index: 10;
 
-  &__line {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 3px;
-    background-color: $color-white;
-    transform: translateY(-50%);
+  .burger_disablet-img {
+    opacity: 0;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 2px;
-    background-color: $color-white;
-  }
+  // &__line {
+  //   position: absolute;
+  //   top: 50%;
+  //   width: 100%;
+  //   height: 3px;
+  //   background-color: $color-white;
+  //   transform: translateY(-50%);
+  // }
 
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: $color-white;
-  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   width: 100%;
+  //   height: 2px;
+  //   background-color: $color-white;
+  // }
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 0;
+  //   width: 100%;
+  //   height: 2px;
+  //   background-color: $color-white;
+  // }
+}
+
+.burger_open {
+  position: absolute;
+  opacity: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity .3s linear;
+}
+
+.burger_close {
+  position: absolute;
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity .3s linear;
 }

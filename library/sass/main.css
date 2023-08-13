@@ -368,6 +368,7 @@ html {
 body {
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
 }
 
 ul {
@@ -440,6 +441,11 @@ a {
   margin-right: 40px;
   margin-left: auto;
 }
+@media (max-width: 1025px) {
+  .header__nav {
+    margin-right: 0;
+  }
+}
 
 .header__icon-profile {
   position: relative;
@@ -447,6 +453,7 @@ a {
   height: 28px;
   background-image: url("../img/icon_profile.svg");
   cursor: pointer;
+  z-index: 10;
 }
 
 .header__icon-profile-icon {
@@ -465,17 +472,38 @@ a {
 
 @media (max-width: 1025px) {
   .nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -332px;
+    padding: 100px 107px;
+    background-color: #0c0c0e;
+    z-index: 7;
+    transition: right 0.3s linear;
   }
+}
+.nav_active {
+  right: 0;
 }
 
 .nav__list {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 1025px) {
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+  }
+}
 
 .nav__item:not(:last-child) {
   margin-right: 30px;
+}
+@media (max-width: 1025px) {
+  .nav__item:not(:last-child) {
+    margin-right: 0;
+  }
 }
 
 .nav__link {
@@ -1054,32 +1082,28 @@ a {
 .burger {
   position: relative;
   width: 45px;
-  height: 20px;
+  height: 32px;
   cursor: pointer;
+  z-index: 10;
 }
-.burger__line {
+.burger .burger_disablet-img {
+  opacity: 0;
+}
+
+.burger_open {
   position: absolute;
+  opacity: 1;
   top: 50%;
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff;
   transform: translateY(-50%);
+  transition: opacity 0.3s linear;
 }
-.burger::after {
-  content: "";
+
+.burger_close {
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #ffffff;
-}
-.burger::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #ffffff;
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s linear;
 }
 
 .search-card__user-name, .search-card__card-number {

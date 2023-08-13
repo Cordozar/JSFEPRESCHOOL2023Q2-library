@@ -9,6 +9,10 @@
 .header__nav {
   margin-right: 40px;
   margin-left: auto;
+
+  @include media-large-tablet {
+    margin-right: 0;
+  }
 }
 
 .header__icon-profile {
@@ -19,6 +23,7 @@
   height: 28px;
   background-image: url('../img/icon_profile.svg');
   cursor: pointer;
+  z-index: 10;
 }
 
 .header__icon-profile-icon {
