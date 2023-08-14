@@ -54,8 +54,11 @@
 
   background-image: url('../img/footer/facebook.svg');
   transition: all 0.3s linear;
-  &:hover {
-    transform: scale(1.2);
+
+  @include media-hover {
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
 .footer__schedule {

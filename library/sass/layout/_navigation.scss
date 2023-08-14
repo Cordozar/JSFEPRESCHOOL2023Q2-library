@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     right: -332px;
-    padding: 100px 107px;
+    padding: 100px 107px 107px;
     background-color: $color-main-dark;
     z-index: 7;
     transition: right .3s linear;
@@ -17,7 +17,7 @@
   @include media-large-tablet {
     flex-direction: column;
     align-items: center;
-    row-gap: 30px;
+    row-gap: 34px;
   }
 
   display: flex;
@@ -31,6 +31,7 @@
   @include media-large-tablet {
     &:not(:last-child) {
       margin-right: 0;
+      line-height: 50px;
     }
   }
 }
