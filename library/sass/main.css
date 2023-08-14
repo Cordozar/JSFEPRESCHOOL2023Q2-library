@@ -769,6 +769,12 @@ a {
   width: 710px;
   margin-bottom: 37px;
 }
+@media (max-width: 767px) {
+  .sorter__form {
+    display: flex;
+    width: auto;
+  }
+}
 
 .sorter__choice {
   position: relative;
