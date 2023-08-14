@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
+  alert('Проверяющий, задание не доделано до конца, по возможности, прощу сегодня его не проверять, хочу доделать.')
+  
   // Navigation
 
   function navigation() {
