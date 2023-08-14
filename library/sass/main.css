@@ -14,16 +14,20 @@
   opacity: 0;
   transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-.footer__githab:hover::after, .footer__rss:hover::after, .footer-contacts-location:hover::after, .nav__link:hover::after {
-  width: 100%;
-  opacity: 1;
+@media (hover: hover) {
+  .footer__githab:hover::after, .footer__rss:hover::after, .footer-contacts-location:hover::after, .nav__link:hover::after {
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 .footer__contacts-facebook, .footer__contacts-inst, .footer__contacts-twitter, .header__icon-profile {
   transition: transform 0.3s ease-in-out;
 }
-.footer__contacts-facebook:hover, .footer__contacts-inst:hover, .footer__contacts-twitter:hover, .header__icon-profile:hover {
-  transform: scale(1.2);
+@media (hover: hover) {
+  .footer__contacts-facebook:hover, .footer__contacts-inst:hover, .footer__contacts-twitter:hover, .header__icon-profile:hover {
+    transform: scale(1.2);
+  }
 }
 
 .btn_access-log, .btn_access-sing, .btn_cards-btn, .btn_card {
@@ -31,9 +35,11 @@
   transition-duration: 0.3s;
   transition-property: background-color, border-color;
 }
-.btn_access-log:hover, .btn_access-sing:hover, .btn_cards-btn:hover, .btn_card:hover {
-  background-color: #bb945f;
-  border-color: #bb945f;
+@media (hover: hover) {
+  .btn_access-log:hover, .btn_access-sing:hover, .btn_cards-btn:hover, .btn_card:hover {
+    background-color: #bb945f;
+    border-color: #bb945f;
+  }
 }
 
 .cards__content, .contacts__content, .shop__menu {
@@ -569,8 +575,10 @@ a {
   background-image: url("../img/footer/facebook.svg");
   transition: all 0.3s linear;
 }
-.footer__contacts-facebook:hover {
-  transform: scale(1.2);
+@media (hover: hover) {
+  .footer__contacts-facebook:hover {
+    transform: scale(1.2);
+  }
 }
 
 .footer__schedule {

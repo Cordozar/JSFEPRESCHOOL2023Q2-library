@@ -17,17 +17,21 @@
     transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
-  &:hover::after {
-    width: 100%;
-    opacity: 1;
+  @include media-hover {
+    &:hover::after {
+      width: 100%;
+      opacity: 1;
+    }
   }
 }
 
 %hover-for-icon {
   transition: transform 0.3s ease-in-out;
 
-  &:hover {
-    transform: scale(1.2);
+  @include media-hover {
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -35,9 +39,12 @@
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
   transition-property: background-color, border-color;
-  &:hover {
-    background-color: $color-primary;
-    border-color: $color-primary;
+
+  @include media-hover {
+    &:hover {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
   }
 }
 
