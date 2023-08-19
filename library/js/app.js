@@ -46,4 +46,39 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   navigation();
+
+  // Slider
+
+  function slider() {
+    const slides = document.querySelectorAll('.slider__slide'),
+      dots = document.querySelectorAll('.slider__dot-wrapper'),
+      prev = document.querySelector('.slide__left-arrow'),
+      next = document.querySelector('.slide__right-arrow'),
+      slidesContent = document.querySelector('.slider__content'),
+      slidesField = document.querySelector('.slider__wrapper'),
+      width = window.getComputedStyle(slidesContent).width;
+
+    let slideIndex = 1;
+    let offset = 0;
+
+    next.addEventListener('click', () => {
+      if (offset === parseInt(width) * (slides.length - 1)) {
+        offset = offset;
+      } else {
+        offset += parseInt(width);
+      }
+      slidesField.style.transform = `translateX(-${offset}px)`;
+    });
+
+    prev.addEventListener('click', () => {
+      if (offset === 0) {
+        offset = 0;
+      } else {
+        offset -= parseInt(width);
+      }
+      slidesField.style.transform = `translateX(-${offset}px)`;
+    });
+  }
+
+  slider();
 });

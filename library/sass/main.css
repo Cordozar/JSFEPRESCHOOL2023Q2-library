@@ -686,6 +686,7 @@ a {
 .slider__content {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 @media (max-width: 1439px) {
   .slider__content {
@@ -695,8 +696,8 @@ a {
 
 .slider__wrapper {
   display: flex;
-  overflow: hidden;
   column-gap: 25px;
+  transition: transform 0.3s ease-in-out;
 }
 @media (max-width: 1439px) {
   .slider__wrapper {

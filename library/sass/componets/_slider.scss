@@ -22,6 +22,7 @@ $img-width: 450px;
 .slider__content {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   @media (max-width: $content-width) {
     align-self: center;
@@ -30,8 +31,9 @@ $img-width: 450px;
 
 .slider__wrapper {
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
   column-gap: 25px;
+  transition: transform 0.3s ease-in-out;
 
   @media (max-width: $content-width) {
     width: $img-width;
