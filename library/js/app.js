@@ -57,51 +57,70 @@ window.addEventListener('DOMContentLoaded', () => {
       prev = document.querySelector('.slide__left-arrow'),
       next = document.querySelector('.slide__right-arrow'),
       slidesField = document.querySelector('.slider__wrapper');
-    // width =
-    //   parseInt(window.getComputedStyle(slide).width) +
-    //   parseInt(window.getComputedStyle(slidesField).columnGap);
 
     let slideIndex = 1;
     let offset = 0;
 
     function checkWindowSize() {
-      if (window.innerWidth <= 1399) {
+      if (window.innerWidth <= 1439) {
         width = parseInt(window.getComputedStyle(slide).width);
-
-        // if (slideIndex > 3) {
-        //   slideIndex = 3;
-        //   offset = parseInt(width) * slideIndex - 1;
-        //   slidesField.style.transform = `translateX(-${offset}px)`;
-        // }
-        // console.log(slideIndex);
       } else {
         width =
           parseInt(window.getComputedStyle(slide).width) +
           parseInt(window.getComputedStyle(slidesField).columnGap);
+
+        if (slideIndex >= 4) {
+          slideIndex = 3;
+          console.log(width);
+
+          offset = width * (slideIndex - 1);
+
+          showSelectSlidePagination(slideIndex);
+
+          moveSlides(offset);
+        }
       }
     }
 
     window.addEventListener('load', checkWindowSize);
     window.addEventListener('resize', checkWindowSize);
 
-    function showSelectedSlidePagination() {
+    function showSelectSlidePagination(slideNumber) {
+      dotsWithWrapper.forEach((dot) => {
+        dot.classList.remove('slider__dot-wrapper_select');
+      });
+      dotsWithWrapper[slideIndex - 1].classList.add(
+        'slider__dot-wrapper_select'
+      );
+
+      dots.forEach((dot) => {
+        dot.classList.remove('slider__dot_select');
+      });
+      dots[slideNumber - 1].classList.add('slider__dot_select');
+    }
+
+    showSelectSlidePagination(1);
+
+    function moveSlides(value) {
+      slidesField.style.transform = `translateX(-${value}px)`;
+    }
+
+    function showSelectSlide() {
       dotsWithWrapper.forEach((dot, i) => {
         dot.addEventListener('click', () => {
           slideIndex = i + 1;
           console.log(slideIndex);
 
-          dots.forEach((dot) => {
-            dot.classList.remove('slider__dot_select');
-          });
-          dots[i].classList.add('slider__dot_select');
+          showSelectSlidePagination(slideIndex);
 
           offset = parseInt(width) * i;
-          slidesField.style.transform = `translateX(-${offset}px)`;
+
+          moveSlides(offset);
         });
       });
     }
 
-    showSelectedSlidePagination();
+    showSelectSlide();
 
     next.addEventListener('click', () => {
       if (offset === parseInt(width) * (slides.length - 1)) {
@@ -109,7 +128,8 @@ window.addEventListener('DOMContentLoaded', () => {
       } else {
         offset += parseInt(width);
       }
-      slidesField.style.transform = `translateX(-${offset}px)`;
+
+      moveSlides(offset);
 
       if (slideIndex >= slides.length) {
         slideIndex = 5;
@@ -117,10 +137,7 @@ window.addEventListener('DOMContentLoaded', () => {
         slideIndex += 1;
       }
 
-      dots.forEach((dot) => {
-        dot.classList.remove('slider__dot_select');
-      });
-      dots[slideIndex - 1].classList.add('slider__dot_select');
+      showSelectSlidePagination(slideIndex);
 
       console.log(slideIndex);
     });
@@ -131,7 +148,8 @@ window.addEventListener('DOMContentLoaded', () => {
       } else {
         offset -= parseInt(width);
       }
-      slidesField.style.transform = `translateX(-${offset}px)`;
+
+      moveSlides(offset);
 
       if (slideIndex <= 1) {
         slideIndex = 1;
@@ -139,14 +157,13 @@ window.addEventListener('DOMContentLoaded', () => {
         slideIndex -= 1;
       }
 
-      dots.forEach((dot) => {
-        dot.classList.remove('slider__dot_select');
-      });
-      dots[slideIndex - 1].classList.add('slider__dot_select');
+      showSelectSlidePagination(slideIndex);
 
       console.log(slideIndex);
     });
   }
 
   slider();
+
+  
 });
