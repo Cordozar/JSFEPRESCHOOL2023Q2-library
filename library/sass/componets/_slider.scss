@@ -74,6 +74,10 @@ $img-width: 450px;
     display: inline-flex;
   }
 
+  &_select {
+    cursor: auto;
+  }
+
   @media (max-width: $content-width) {
     display: inline-flex;
   }

@@ -740,6 +740,9 @@ a {
 .slider__dot-wrapper:nth-child(-n+3) {
   display: inline-flex;
 }
+.slider__dot-wrapper_select {
+  cursor: auto;
+}
 @media (max-width: 1439px) {
   .slider__dot-wrapper {
     display: inline-flex;
