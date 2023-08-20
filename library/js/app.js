@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   navigation();
 
-  // Slider
+  // Slider About
 
   function slider() {
     const slides = document.querySelectorAll('.slider__slide'),
@@ -71,7 +71,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (slideIndex >= 4) {
           slideIndex = 3;
-          console.log(width);
 
           offset = width * (slideIndex - 1);
 
@@ -109,7 +108,6 @@ window.addEventListener('DOMContentLoaded', () => {
       dotsWithWrapper.forEach((dot, i) => {
         dot.addEventListener('click', () => {
           slideIndex = i + 1;
-          console.log(slideIndex);
 
           showSelectSlidePagination(slideIndex);
 
@@ -138,8 +136,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       showSelectSlidePagination(slideIndex);
-
-      console.log(slideIndex);
     });
 
     prev.addEventListener('click', () => {
@@ -158,12 +154,29 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       showSelectSlidePagination(slideIndex);
-
-      console.log(slideIndex);
     });
   }
 
   slider();
 
-  
+  // Slider Favourites
+
+  function sliderFavourites() {
+    document.querySelector('.sorter__form').addEventListener('click', (e) => {
+      if (e.target.classList.contains('sorter__radio')) {
+        let clickRadio = e.target;
+
+        removeSelectedRadio();
+      }
+    });
+
+    function removeSelectedRadio() {
+      let radios = document.querySelectorAll('.sorter__radio')
+      console.log(radios);
+    }
+  }
+
+  sliderFavourites();
+
+
 });
