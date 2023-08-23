@@ -162,21 +162,110 @@ window.addEventListener('DOMContentLoaded', () => {
   // Slider Favourites
 
   function sliderFavourites() {
-    document.querySelector('.sorter__form').addEventListener('click', (e) => {
-      if (e.target.classList.contains('sorter__radio')) {
-        let clickRadio = e.target;
+    form = document.querySelector('.sorter__form');
+    radios = document.querySelectorAll('.sorter__radio');
+    seasons = document.querySelectorAll('.sorter__card-season');
 
-        removeSelectedRadio();
+    let indexSelectRadio;
+
+    radios.forEach((el, i) => {
+      if (el.checked === true) {
+        seasons.forEach((el) => {
+          el.classList.remove('sorter__card-season_select');
+        });
+
+        seasons[i].classList.add('sorter__card-season_select');
+        // seasons[i].classList.remove('sorter__card-season_fade');
+        seasons[i].classList.add('sorter__card-season_flare');
+
+        indexSelectRadio = i;
       }
     });
 
-    function removeSelectedRadio() {
-      let radios = document.querySelectorAll('.sorter__radio')
-      console.log(radios);
+    form.addEventListener('click', (e) => {
+      if (e.target.closest('.sorter__radio')) {
+        // let clickRadio = e.target;
+
+        if (!checkRepearedPressingRadio()) {
+          seasons[getIndexSelectSeason()].classList.remove(
+            'sorter__card-season_flare'
+          );
+          // seasons[getIndexSelectSeason()].classList.add(
+          //   'sorter__card-season_fade'
+          // );
+
+          setTimeout(() => {
+            seasons[getIndexSelectSeason()].classList.remove(
+              'sorter__card-season_flare'
+            );
+            seasons[getIndexSelectSeason()].classList.remove(
+              'sorter__card-season_select'
+            );
+            seasons[getIndexSelectRadio()].classList.add('sorter__card-season_select');
+            // seasons[getIndexSelectRadio()].classList.add('sorter__card-season_select');
+            seasons[getIndexSelectRadio()].classList.add(
+              'sorter__card-season_flare'
+            );
+          }, 1000);
+        }
+
+        
+
+        console.log('asdasdas');
+      }
+    });
+
+    function checkRepearedPressingRadio() {
+      let currSelectSeason;
+      let currSelectRadio;
+
+      seasons.forEach((el, i) => {
+        if (el.classList.contains('sorter__card-season_select')) {
+          currSelectSeason = i;
+
+          radios.forEach((el, i) => {
+            if (el.checked === true) {
+              currSelectRadio = i;
+            }
+          });
+        }
+      });
+
+      return currSelectRadio === currSelectSeason;
+    }
+
+    function getIndexSelectSeason() {
+      let res;
+
+      seasons.forEach((el, i) => {
+        if (el.classList.contains('sorter__card-season_select')) {
+          res = i;
+        }
+      });
+
+      return res;
+    }
+
+    function getIndexSelectRadio() {
+      let res;
+
+      radios.forEach((el, i) => {
+        if (el.checked === true) {
+          res = i;
+        }
+      });
+
+      return res;
+    }
+
+    function selectSeason(selectRadio) {
+      seasons.forEach((el) => {
+        el.classList.remove('sorter__card-season_select');
+      });
+
+      seasons[selectRadio].classList.add('sorter__card-season_select');
     }
   }
 
   sliderFavourites();
-
-
 });

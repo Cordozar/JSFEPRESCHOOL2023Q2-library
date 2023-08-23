@@ -853,31 +853,46 @@ a {
 .sorter__cards-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   row-gap: 40px;
 }
 @media (max-width: 1260px) {
   .sorter__cards-wrapper {
     flex-direction: column;
+  }
+}
+
+.sorter__card-season {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 40px;
+  transition: opacity 1s ease-in-out;
+}
+@media (max-width: 1260px) {
+  .sorter__card-season {
+    flex-direction: column;
     align-items: center;
   }
+}
+.sorter__card-season_select {
+  display: flex;
+  opacity: 1;
+}
+.sorter__card-season_fade {
+  opacity: 0;
+}
+.sorter__card-season_flare {
+  opacity: 1;
 }
 
 .card {
   position: relative;
-  display: none;
+  display: flex;
   flex-direction: column;
   width: 550px;
+  height: 555px;
   padding: 15px 172px 14px 20px;
   border: 1px solid #000000;
-}
-@media (max-width: 1260px) {
-  .card {
-    height: 555px;
-  }
-}
-.card:nth-child(-n+4) {
-  display: flex;
 }
 
 .card__book-status {
