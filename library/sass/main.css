@@ -866,7 +866,6 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 40px;
-  transition: opacity 1s ease-in-out;
 }
 @media (max-width: 1260px) {
   .sorter__card-season {
@@ -876,15 +875,32 @@ a {
 }
 .sorter__card-season_select {
   display: flex;
-  opacity: 1;
-}
-.sorter__card-season_fade {
-  opacity: 0;
-}
-.sorter__card-season_flare {
-  opacity: 1;
 }
 
+.fade-in {
+  animation: fade-in 0.7s forwards;
+}
+
+.fade-out {
+  animation: fade-out 0.7s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .card {
   position: relative;
   display: flex;

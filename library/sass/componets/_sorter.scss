@@ -99,18 +99,35 @@ $padding-for-label: 5px;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 40px;
-  transition: opacity 1s ease-in-out;
 
   &_select {
     display: flex;
-    opacity: 1;
   }
-  &_fade {
+}
+
+.fade-in {
+  animation: fade-in .7s forwards;
+}
+
+.fade-out {
+  animation: fade-out .7s forwards;
+}
+
+@keyframes fade-in {
+  from {
     opacity: 0;
   }
-
-  &_flare {
+  to {
     opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 

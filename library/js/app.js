@@ -175,8 +175,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
 
         seasons[i].classList.add('sorter__card-season_select');
-        // seasons[i].classList.remove('sorter__card-season_fade');
-        seasons[i].classList.add('sorter__card-season_flare');
 
         indexSelectRadio = i;
       }
@@ -184,32 +182,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('click', (e) => {
       if (e.target.closest('.sorter__radio')) {
-        // let clickRadio = e.target;
 
         if (!checkRepearedPressingRadio()) {
-          seasons[getIndexSelectSeason()].classList.remove(
-            'sorter__card-season_flare'
-          );
-          // seasons[getIndexSelectSeason()].classList.add(
-          //   'sorter__card-season_fade'
-          // );
+          seasons[getIndexSelectSeason()].classList.remove('fade-in');
+          seasons[getIndexSelectSeason()].classList.add('fade-out');
 
           setTimeout(() => {
             seasons[getIndexSelectSeason()].classList.remove(
-              'sorter__card-season_flare'
-            );
-            seasons[getIndexSelectSeason()].classList.remove(
               'sorter__card-season_select'
             );
-            seasons[getIndexSelectRadio()].classList.add('sorter__card-season_select');
-            // seasons[getIndexSelectRadio()].classList.add('sorter__card-season_select');
+            seasons[getIndexSelectRadio()].classList.remove('fade-out');
             seasons[getIndexSelectRadio()].classList.add(
-              'sorter__card-season_flare'
+              'fade-in',
+              'sorter__card-season_select'
             );
-          }, 1000);
+          }, 700);
         }
-
-        
 
         console.log('asdasdas');
       }
