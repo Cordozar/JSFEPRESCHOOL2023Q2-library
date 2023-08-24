@@ -8,21 +8,33 @@ $padding-for-label: 5px;
 .sorter__description {
   @include font-inter($font-weight: 700, $letter-spacing: 0.1px);
 
-  margin-bottom: 40px;
+  margin-bottom: 3px;
 }
 .sorter__form {
-  @include media-tablet {
+@include media-tablet {
     display: flex;
     width: auto;
   }
 
+@include media-intermediate-tablet {
+    position: sticky;
+    top: 0;
+  }
+
   position: relative;
   left: -$padding-for-label;
+  z-index: 10;
   display: inline-flex;
   justify-content: space-between;
+  box-sizing: content-box;
   width: 710px;
-  margin-bottom: 37px;
+  padding-top: 37px;
+  padding-right: 30px;
+  padding-bottom: 37px;
+  background-color: $color-white;
+  border-bottom-right-radius: 10px;
 }
+
 
 .sorter__choice {
   position: relative;
@@ -31,6 +43,7 @@ $padding-for-label: 5px;
   padding: $padding-for-label;
   cursor: pointer;
 }
+
 .sorter__radio {
   display: none;
 
@@ -106,11 +119,11 @@ $padding-for-label: 5px;
 }
 
 .fade-in {
-  animation: fade-in .7s forwards;
+  animation: fade-in 0.5s forwards;
 }
 
 .fade-out {
-  animation: fade-out .7s forwards;
+  animation: fade-out 0.5s forwards;
 }
 
 @keyframes fade-in {

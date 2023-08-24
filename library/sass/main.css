@@ -771,21 +771,33 @@ a {
   font-family: "Inter", sans-serif;
   color: black;
   letter-spacing: 0.1px;
-  margin-bottom: 40px;
+  margin-bottom: 3px;
 }
 
 .sorter__form {
   position: relative;
   left: -5px;
+  z-index: 10;
   display: inline-flex;
   justify-content: space-between;
+  box-sizing: content-box;
   width: 710px;
-  margin-bottom: 37px;
+  padding-top: 37px;
+  padding-right: 30px;
+  padding-bottom: 37px;
+  background-color: #ffffff;
+  border-bottom-right-radius: 10px;
 }
 @media (max-width: 767px) {
   .sorter__form {
     display: flex;
     width: auto;
+  }
+}
+@media (max-width: 1260px) {
+  .sorter__form {
+    position: sticky;
+    top: 0;
   }
 }
 
@@ -878,11 +890,11 @@ a {
 }
 
 .fade-in {
-  animation: fade-in 0.7s forwards;
+  animation: fade-in 0.5s forwards;
 }
 
 .fade-out {
-  animation: fade-out 0.7s forwards;
+  animation: fade-out 0.5s forwards;
 }
 
 @keyframes fade-in {
