@@ -1,0 +1,11 @@
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-image: url('../img/close_btn.svg');
+  background-size: contain;
+  cursor: pointer;
+}

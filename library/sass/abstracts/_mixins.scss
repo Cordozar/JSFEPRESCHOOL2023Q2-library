@@ -38,21 +38,21 @@
   transition-property: $transition-property;
 }
 
-@mixin btn(
-  $border: none,
-  $background-color: $color-primary,
-  $padding: 16px 45px
-) {
-  @include font-georgia($font-size: 1.7rem);
+// @mixin btn(
+//   $border: none,
+//   $background-color: $color-primary,
+//   $padding: 16px 45px
+// ) {
+//   @include font-georgia($font-size: 1.7rem);
 
-  display: inline-block;
-  padding: $padding;
-  letter-spacing: 1px;
-  background-color: $background-color;
-  border: $border;
-  border-radius: 100px;
-  cursor: pointer;
-}
+//   display: inline-block;
+//   padding: $padding;
+//   letter-spacing: 1px;
+//   background-color: $background-color;
+//   border: $border;
+//   border-radius: 100px;
+//   cursor: pointer;
+// }
 
 @mixin media-intermediate-tablet {
   @media (max-width: $intermediate-width) {

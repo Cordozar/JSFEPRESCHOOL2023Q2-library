@@ -1,0 +1,71 @@
+.profile-menu {
+  width: 80px;
+  padding: 20px 25px;
+  padding: 5px 0 20px;
+  background-color: $color-white;
+  display: none;
+
+  &__active {
+    display: block;
+  }
+}
+.profile-menu__title {
+  @include font-inter(
+    $font-size: 1.5rem,
+    $font-weight: 700,
+    $line-height: 2rem
+  );
+
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: $color-primary;
+    transform: translateX(-50%);
+  }
+}
+.profile-menu__login {
+  @include font-inter($font-size: 1.5rem, $line-height: 2rem);
+
+  @extend %styles-for-btn;
+
+  display: none;
+  margin: 0 auto 10px;
+}
+.profile-menu__register {
+  @include font-inter($font-size: 1.5rem, $line-height: 2rem);
+
+  @extend %styles-for-btn;
+
+  display: none;
+  margin: 0 auto;
+}
+.profile-menu__my-profile {
+  @include font-inter($font-size: 1.5rem, $line-height: 2rem);
+
+  @extend %styles-for-btn;
+
+  display: none;
+  margin: 0 auto 10px;
+}
+.profile-menu__logout {
+  @include font-inter($font-size: 1.5rem, $line-height: 2rem);
+
+  @extend %styles-for-btn;
+
+  display: none;
+  margin: 0 auto;
+}
+
+.active {
+  display: block;
+}
+

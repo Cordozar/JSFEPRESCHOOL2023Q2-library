@@ -1,0 +1,77 @@
+.header__login {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login {
+  z-index: 13;
+  display: none;
+  width: 250px;
+  padding: 20px 25px;
+  background-color: $color-white;
+
+  &__show {
+    display: block;
+  }
+}
+.login__title {
+  @include font-forum(
+    $font-size: 2rem,
+    $line-height: 2rem,
+    $letter-spacing: 0.4px
+  );
+
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.login__text {
+  @include font-inter(
+    $font-size: 1.5rem,
+    $line-height: 2rem,
+    $letter-spacing: 0.3px
+  );
+
+  margin-bottom: 10px;
+}
+.login__email-input {
+  @extend %styles-for-input;
+
+  margin-bottom: 10px;
+}
+.login__password-input {
+  @extend %styles-for-input;
+
+  margin-bottom: 20px;
+}
+.login__reg-acc {
+  @include font-inter($font-size: 1rem);
+
+  display: inline-block;
+  padding-right: 8px;
+}
+
+.login__btn {
+  @extend %transition-for-btn;
+  @extend %styles-for-btn;
+
+  margin-bottom: 11px;
+  padding: 8px 18px;
+}
+
+.login__link {
+  @include font-inter(
+    $font-size: 1rem,
+    $font-weight: 700,
+    $letter-spacing: 1px
+  );
+
+  display: inline-block;
+  padding: 0 0 1px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-black;
+  cursor: pointer;
+}

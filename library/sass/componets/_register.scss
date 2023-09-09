@@ -1,0 +1,85 @@
+.header__register {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register {
+  z-index: 13;
+  width: 250px;
+  padding: 20px 25px;
+  background-color: $color-white;
+  display: none;
+
+  &__show {
+    display: block;
+  }
+}
+.register__title {
+  @include font-forum(
+  $font-size: 2rem,
+  $line-height: 2rem,
+  $letter-spacing: 0.4px
+  );
+
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.register__text {
+  @include font-inter(
+  $font-size: 1.5rem,
+  $line-height: 2rem,
+  $letter-spacing: 0.3px
+  );
+
+  margin-bottom: 10px;
+}
+.register__first-name-input {
+  @extend %styles-for-input;
+
+  margin-bottom: 10px;
+}
+.register__last-name-input {
+  @extend %styles-for-input;
+
+  margin-bottom: 10px;
+}
+.register__email-input {
+  @extend %styles-for-input;
+
+  margin-bottom: 10px;
+}
+.register__password-input {
+  @extend %styles-for-input;
+
+  margin-bottom: 20px;
+}
+.register__btn {
+  @extend %transition-for-btn;
+  @extend %styles-for-btn;
+
+  margin-bottom: 11px;
+  padding: 8px 14px;
+}
+.register__login {
+  @include font-inter($font-size: 1rem);
+
+  display: inline-block;
+  padding-right: 8px;
+}
+.register_link {
+  @include font-inter(
+  $font-size: 1rem,
+  $font-weight: 700,
+  $letter-spacing: 1px
+  );
+
+  display: inline-block;
+  padding: 0 0 1px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-black;
+  cursor: pointer;
+}

@@ -7,12 +7,16 @@
   text-align: center;
 }
 .search-card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 600px;
   padding: 19px 18px 26px 19px;
   border: 3px solid #bb945f;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 .search-card__form-inputs {
+  width: 100%;
   margin-bottom: 19px;
   padding: 20px 20px 25px 20px;
   background-color: $color-primary;
@@ -36,4 +40,20 @@
 }
 .search-card__search-btn {
   margin: 0 auto;
+}
+
+.search-card__info {
+  display: flex;
+  column-gap: 35px;
+}
+.search-card__info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-card__info-name {
+}
+.search-card__info-img {
+}
+.search-card__info-count {
 }

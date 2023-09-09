@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <div class="canvas"></div>
   <header class="header">
     <div class="header__wrapper wrapper">
       <h1 class="logo">
@@ -37,7 +38,71 @@
           </li>
         </ul>
       </nav>
-      <div class="header__icon-profile"></div>
+      <div class="header__icon-profile header__icon-profile_without-registering"></div>
+      <div class="header__profile-menu profile-menu">
+        <h4 class="profile-menu__title">
+          Profile
+        </h4>
+        <button class="profile-menu__login active">Log In</button>
+        <button class="profile-menu__register active">Register</button>
+        <button class="profile-menu__my-profile">My Profile</button>
+        <button class="profile-menu__logout">Log Out</button>
+      </div>
+      <div class="header__profile-menu profile-menu">
+        <h4 class="profile-menu__title">
+          Profile
+        </h4>
+        <button class="profile-menu__login">Log In</button>
+        <button class="profile-menu__register">Register</button>
+      </div>
+      <div class="header__login login">
+        <div class="close-btn"></div>
+        <h4 class="login__title">
+          login
+        </h4>
+        <form action="#">
+          <div class="login__text">
+            E-mail or readers card
+          </div>
+          <input class="login__email-input" type="email" name="login-email" id="loginEmail">
+          <div class="login__text">
+            Password
+          </div>
+          <input class="login__password-input" type="password" name="login-password" id="loginPassword">
+          <button class="login__btn btn" type="submit">Log In</button>
+          <span class="login__reg-acc">Don’t have an account?</span>
+          <button class="login__link">Register</button>
+        </form>
+      </div>
+      <div class="header__register register">
+        <div class="close-btn"></div>
+        <h4 class="register__title">
+          register
+        </h4>
+        <form class="register__form" action="#">
+          <div class="register__text">
+            First name
+          </div>
+          <input class="register__first-name-input" type="text" name="register-first-name" id="registerFirstName"
+            required>
+          <div class="register__text">
+            Last name
+          </div>
+          <input class="register__last-name-input" type="text" name="register-last-name" id="registerLastName" required>
+          <div class="register__text">
+            E-mail
+          </div>
+          <input class="register__email-input" type="email" name="register-email" id="registerEmail" required>
+          <div class="register__text">
+            Password
+          </div>
+          <input class="register__password-input" type="password" name="register-password" id="registerPassword"
+            required minlength="8">
+          <button class="register__btn btn" type="submit">Sign Up</button>
+          <span class="register__login">Already have an account?</span>
+          <button type="submit" class="register_link">Login</button>
+        </form>
+      </div>
       <div class="header__burger burger">
         <img class="burger_open" src="./img/burger.svg" alt="burger open">
         <img class="burger_close burger_disablet-img" src="./img/burger(1).svg" alt="burger close">
@@ -206,8 +271,8 @@
                   A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors
                   have evolved and thrived as the modern world has changed around them.
                 </p>
-                <button class="card__btn btn btn_own" disabled>
-                  Own
+                <button class="card__btn btn">
+                  Buy
                 </button>
                 <img class="card__img" src="./img/sorter/book-winter-4.jpg" alt="book cover">
               </div>
@@ -286,8 +351,8 @@
                   America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel
                   Allende and Julia Alvarez.
                 </p>
-                <button class="card__btn btn btn_own" disabled>
-                  Own
+                <button class="card__btn btn">
+                  Buy
                 </button>
                 <img class="card__img" src="./img/sorter/book-spring-4.jpg" alt="book cover">
               </div>
@@ -685,7 +750,38 @@
                 <input class="search-card__card-number" pattern="[a-zA-Z0-9-]+" placeholder="Card number" type="search"
                   name="card-number" id="card-number">
               </div>
-              <input class="search-card__search-btn btn btn_cards-btn" type="submit" value="Check the card">
+              <button class="search-card__search-btn btn btn_cards-btn">
+                Check the card
+              </button>
+              <div class="search-card__info">
+                <div class="search-card__info-item">
+                  <div class="search-card__info-name">
+                    Visits
+                  </div>
+                  <img class="search-card__info-img" src="img/library_card/Union.svg" alt="icon">
+                  <div class="search-card__info-count">
+                    23
+                  </div>
+                </div>
+                <div class="search-card__info-item">
+                  <div class="search-card__info-name">
+                    Bonuses
+                  </div>
+                  <img class="search-card__info-img" src="img/library_card/Star 1.svg" alt="icon">
+                  <div class="search-card__info-count">
+                    1240
+                  </div>
+                </div>
+                <div class="search-card__info-item">
+                  <div class="search-card__info-name">
+                    Books
+                  </div>
+                  <img class="search-card__info-img" src="img/library_card/book.svg" alt="icon">
+                  <div class="search-card__info-count">
+                    2
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
           <div class="cards__access-management">
