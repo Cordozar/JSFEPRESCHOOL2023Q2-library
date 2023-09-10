@@ -297,7 +297,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // LoginModal
 
   const login = document.querySelector('.profile-menu__login'),
-    loginSecond = document.querySelector('.cards__access-log-in');
+    loginSecond = document.querySelector('.cards__access-log-in'),
+    cardBtns = document.querySelectorAll('.card__btn');
 
   function openLoginModal() {
     canvas.classList.add('canvas__show');
@@ -313,6 +314,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   login.addEventListener('click', () => {
     openLoginModal();
+  });
+
+  cardBtns.forEach((el) => {
+    el.addEventListener('click', () => {
+      if (!localStorage.getItem('isAutorisation')) {
+        openLoginModal();
+      }
+    });
   });
 
   loginModal.addEventListener('click', (e) => {
@@ -370,9 +379,46 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Changes after rigistration
 
-  const checkCard = document.querySelector('.search-card__search-btn')
+  const checkCard = document.querySelector('.search-card__search-btn'),
+    cardInfo = document.querySelector('.search-card__info');
 
   changesAfterRegistration();
+
+  function сhangeIconProfile() {
+    if (localStorage.getItem('isAutorisation')) {
+      iconProfile.classList.remove('header__icon-profile_without-registering');
+      iconProfile.classList.add('header__icon-profile_registering');
+      iconProfile.textContent = `${localStorage.getItem('firstName')[0]}${
+        localStorage.getItem('lastName')[0]
+      }`;
+    } else {
+      localStorage.removeItem('isAutorisation');
+
+      iconProfile.classList.add('header__icon-profile_without-registering');
+      iconProfile.classList.remove('header__icon-profile_registering');
+      iconProfile.textContent = ``;
+    }
+  }
+
+  function changeMenuProfile() {
+    if (localStorage.getItem('isAutorisation')) {
+      login.classList.remove('active');
+      register.classList.remove('active');
+      myProfileBtn.classList.add('active');
+      logOutBtn.classList.add('active');
+    } else {
+      login.classList.remove('active');
+      register.classList.remove('active');
+      myProfileBtn.classList.add('active');
+      logOutBtn.classList.add('active');
+    }
+  }
+
+  function addStatusRegistration() {
+    localStorage.setItem('isRegistration', true);
+  }
+
+
 
   function changesAfterRegistration() {
     if (localStorage.getItem('isRegister')) {
@@ -389,13 +435,47 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  checkCard.addEventListener()
+  const valueUserName = document.querySelector('.search-card__user-name'),
+    valueCardNumber = document.querySelector('.search-card__card-number');
+
+  checkCard.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (localStorage.getItem('isRegister')) {
+      const userName = `${localStorage.getItem(
+        'firstName'
+      )} ${localStorage.getItem('lastName')}`;
+      const cardNumber = `${localStorage.getItem('cardNumber')}`;
+
+      if (
+        valueUserName.value === userName &&
+        valueCardNumber.value === cardNumber
+      ) {
+        checkCard.style.display = 'none';
+        cardInfo.style.display = 'flex';
+
+        const req = new Promise(function (resolve) {
+          setTimeout(function () {
+            checkCard.style.display = 'block';
+            cardInfo.style.display = 'none';
+
+            resolve();
+          }, 10000);
+        });
+
+        req.then(() => {
+          valueUserName.value = '';
+          valueCardNumber.value = '';
+        });
+      }
+    }
+  });
 
   logOutBtn.addEventListener('click', changesAfterLogout);
 
   function changesAfterLogout() {
     if (localStorage.getItem('isAutorisation')) {
-      localStorage.setItem('isAutorisation', false);
+      localStorage.removeItem('isAutorisation');
 
       iconProfile.classList.add('header__icon-profile_without-registering');
       iconProfile.classList.remove('header__icon-profile_registering');
@@ -408,5 +488,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Changes after rigistration
 
+  // function changesAfterAutorisation () {
+  //   if (localStorage.getItem('isAutorisation')) {}
+  // }
 });

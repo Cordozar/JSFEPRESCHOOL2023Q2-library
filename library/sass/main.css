@@ -1203,6 +1203,13 @@ a {
 
 .search-card__user-name {
   margin-bottom: 24px;
+  color: #bb945f;
+  outline: none;
+}
+
+.search-card__card-number {
+  color: #bb945f;
+  outline: none;
 }
 
 .search-card__search-btn {
@@ -1210,7 +1217,7 @@ a {
 }
 
 .search-card__info {
-  display: flex;
+  display: none;
   column-gap: 35px;
 }
 
@@ -1218,6 +1225,26 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.search-card__info-name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: 0.2px;
+}
+
+.search-card__info-count {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: 0.2px;
 }
 
 .burger {
@@ -1658,7 +1685,7 @@ a {
   font-size: 30px;
   line-height: normal;
   font-family: "Forum", cursive;
-  color: #000000;
+  color: #bb945f;
   letter-spacing: 0.6px;
   display: block;
   width: 100%;

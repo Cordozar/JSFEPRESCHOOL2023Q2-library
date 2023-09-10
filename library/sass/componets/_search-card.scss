@@ -23,9 +23,9 @@
 }
 .search-card__library-name {
   @include font-forum(
-    $font-size: 3rem,
-    $line-height: 50px,
-    $letter-spacing: 0.6px
+  $font-size: 3rem,
+  $line-height: 50px,
+  $letter-spacing: 0.6px
   );
 
   margin-bottom: 19px;
@@ -34,16 +34,21 @@
   @extend %form-input;
 
   margin-bottom: 24px;
+  color: $color-primary;
+  outline: none;
 }
 .search-card__card-number {
   @extend %form-input;
+
+  color: $color-primary;
+  outline: none;
 }
 .search-card__search-btn {
   margin: 0 auto;
 }
 
 .search-card__info {
-  display: flex;
+  display: none;
   column-gap: 35px;
 }
 .search-card__info-item {
@@ -52,8 +57,18 @@
   align-items: center;
 }
 .search-card__info-name {
+  @include font-inter(
+  $font-size: 1rem,
+  $line-height: 2rem,
+  $letter-spacing: 0.2px
+  );
 }
 .search-card__info-img {
 }
 .search-card__info-count {
+  @include font-inter(
+  $font-size: 1rem,
+  $line-height: 2rem,
+  $letter-spacing: 0.2px
+  );
 }
