@@ -48,23 +48,77 @@
         <button class="profile-menu__my-profile">My Profile</button>
         <button class="profile-menu__logout">Log Out</button>
       </div>
-      <div class="header__profile-menu profile-menu">
-        <h4 class="profile-menu__title">
-          Profile
-        </h4>
-        <button class="profile-menu__login">Log In</button>
-        <button class="profile-menu__register">Register</button>
+      <div class="profile-modal">
+        <div class="close-btn"></div>
+        <div class="profile-modal__left-block">
+          <div class="profile-modal__icon">JD</div>
+          <div class="profile-modal__name">John Doe</div>
+        </div>
+        <div class="profile-modal__right-block">
+          <div class="profile-modal__title">
+            My profile
+          </div>
+          <div class="profile-modal__info">
+            <div class="search-card__info-item">
+              <div class="profile-modal__info-name">
+                Visits
+              </div>
+              <img class="profile-modal__info-img" src="img/library_card/Union.svg" alt="icon">
+              <div class="search-card__info-count">
+                23
+              </div>
+            </div>
+            <div class="search-card__info-item">
+              <div class="profile-modal__info-name">
+                Bonuses
+              </div>
+              <img class="profile-modal__info-img" src="img/library_card/Star 1.svg" alt="icon">
+              <div class="search-card__info-count">
+                1240
+              </div>
+            </div>
+            <div class="search-card__info-item">
+              <div class="profile-modal__info-name">
+                Books
+              </div>
+              <img class="profile-modal__info-img" src="img/library_card/book.svg" alt="icon">
+              <div class="search-card__info-count">
+                2
+              </div>
+            </div>
+          </div>
+          <div class="profile-modal__subtitle">
+            Rented books
+          </div>
+          <ul class="profile-modal__book-list">
+            <li class="profile-modal__item">
+              The Last Queen, Clive Irving
+            </li>
+            <li class="profile-modal__item">
+              Dominicana, Angie Cruz
+            </li>
+          </ul>
+          <div class="profile-modal__row">
+            <span class="profile-modal__text">
+              Card number
+            </span>
+            <span class="profile-modal__card-number">
+              F00234030
+            </span>
+            <div class="profile-modal__icon-copy"></div>
+          </div>
+        </div>
       </div>
       <div class="header__login login">
         <div class="close-btn"></div>
         <h4 class="login__title">
           login
         </h4>
-        <form action="#">
+        <form class="login__form" action="#">
           <div class="login__text">
             E-mail or readers card
           </div>
-          <input class="login__email-input" type="email" name="login-email" id="loginEmail">
+          <input class="login__email-input" type="text" name="login-email" id="loginEmail">
           <div class="login__text">
             Password
           </div>

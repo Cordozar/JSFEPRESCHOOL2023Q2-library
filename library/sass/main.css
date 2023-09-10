@@ -1682,6 +1682,171 @@ a {
   display: block;
 }
 
+.profile-modal {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  z-index: 13;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+.profile-modal_active {
+  display: flex;
+}
+
+.profile-modal__left-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 403px;
+  background-color: #0c0c0e;
+}
+
+.profile-modal__icon {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  color: #bb945f;
+  text-transform: uppercase;
+  background-color: #ffffff;
+}
+
+.profile-modal__name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: normal;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 120px;
+  padding: 5px 0;
+  background-color: #ffffff;
+}
+
+.profile-modal__right-block {
+  padding: 29px 60px 39px 20px;
+  background-color: #ffffff;
+}
+
+.profile-modal__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: normal;
+  font-family: "Forum", cursive;
+  color: black;
+  letter-spacing: 0.8px;
+  margin-bottom: 27px;
+  text-transform: uppercase;
+}
+
+.profile-modal__info-name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: 0.2px;
+  margin-bottom: 10px;
+}
+
+.profile-modal__info-img {
+  margin-bottom: 10px;
+}
+
+.profile-modal__info {
+  display: flex;
+  column-gap: 22px;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.profile-modal__subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: normal;
+  margin-bottom: 30px;
+}
+
+.profile-modal__book-list {
+  margin-bottom: 40px;
+  list-style: inside;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.profile-modal__item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: 2px;
+  padding-left: 2px;
+}
+
+.profile-modal__row {
+  display: flex;
+  column-gap: 15px;
+}
+
+.profile-modal__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: normal;
+  display: inline-block;
+  color: #0c0c0e;
+}
+
+.profile-modal__card-number {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: normal;
+  display: inline-block;
+  color: #bb945f;
+}
+
+.profile-modal__icon-copy {
+  display: inline-block;
+  width: 12px;
+  height: 13.3px;
+  padding-left: 15px;
+  background-image: url("../img/icon copy.svg");
+  background-repeat: no-repeat;
+  align-self: center;
+}
+
 .search-card__user-name, .search-card__card-number {
   font-style: normal;
   font-weight: 400;

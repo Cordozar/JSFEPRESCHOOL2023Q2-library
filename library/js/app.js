@@ -281,14 +281,21 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!e.target.closest('.register') && !e.target.closest('.login')) {
       closeRegisterModal();
       closeLoginModal();
+      closeProfileModal();
     }
   });
 
-  registerModal.addEventListener('click', (e) => {
-    if (e.target.closest('.close-btn')) {
-      closeRegisterModal();
-    }
-  });
+  function closeModalBtn(modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target.closest('.close-btn')) {
+        closeRegisterModal();
+        closeLoginModal();
+        closeProfileModal();
+      }
+    });
+  }
+
+  closeModalBtn(registerModal);
 
   registerSecond.addEventListener('click', () => {
     openRegisterModal();
@@ -324,17 +331,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  loginModal.addEventListener('click', (e) => {
-    if (e.target.closest('.close-btn')) {
-      closeLoginModal();
-    }
-  });
+  closeModalBtn(loginModal);
 
   loginSecond.addEventListener('click', () => {
     openLoginModal();
   });
 
-  // Save user data
+  // Changes after rigistration and autorisation
 
   const registerForm = document.querySelector('.register__form'),
     inputRegisterFirstName = document.querySelector('#registerFirstName'),
@@ -368,27 +371,46 @@ window.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('cardNumber', generateRandomHexNineDigitNumber());
       localStorage.setItem('isRegister', true);
       localStorage.setItem('isAutorisation', true);
+      localStorage.setItem('countAutorisation', 1);
+
+      changesAfterAutorisation();
     }
 
     registerForm.reset();
-    changesAfterRegistration();
+  });
+
+  const formLogin = document.querySelector('.login__form'),
+    inputLoginEmail = document.querySelector('.login__email-input'),
+    inputLoginPassword = document.querySelector('.login__password-input');
+
+  formLogin.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (
+      (inputLoginEmail.value === localStorage.getItem('email') ||
+        inputLoginEmail.value === localStorage.getItem('cardNumber')) &&
+      inputLoginPassword.value === localStorage.getItem('password')
+    ) {
+      localStorage.setItem('isAutorisation', true);
+
+      changesAfterAutorisation();
+      counterAutorisation();
+    }
   });
 
   const myProfileBtn = document.querySelector('.profile-menu__my-profile'),
-    logOutBtn = document.querySelector('.profile-menu__logout');
-
-  // Changes after rigistration
-
-  const checkCard = document.querySelector('.search-card__search-btn'),
+    logOutBtn = document.querySelector('.profile-menu__logout'),
+    checkCard = document.querySelector('.search-card__search-btn'),
     cardInfo = document.querySelector('.search-card__info');
 
-  // function checkRegistrationStatus() {
-  //   if (localStorage.getItem('isRegister')) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  function changesAfterAutorisation() {
+    changeIconProfile();
+    toogleAttributeTitle();
+    toggleTitleMenu();
+    changeMenuProfile();
+  }
+
+  changesAfterAutorisation();
 
   function checkAutorisationStatus() {
     if (localStorage.getItem('isAutorisation')) {
@@ -451,20 +473,47 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function changesAfterRegistration() {
-    localStorage.setItem('isRegister', true);
-
-    changesAfterAutorisation();
+  function counterAutorisation() {
+    let count = +localStorage.getItem('countAutorisation');
+    count += 1;
+    localStorage.setItem('countAutorisation', count);
   }
 
-  function changesAfterAutorisation() {
-    changeIconProfile();
-    toogleAttributeTitle();
-    toggleTitleMenu();
-    changeMenuProfile();
+  const profileModal = document.querySelector('.profile-modal');
+
+  myProfileBtn.addEventListener('click', openProfileModal);
+
+  function openProfileModal() {
+    profileModal.classList.add('profile-modal_active');
+    canvas.classList.add('canvas__show');
+    body.classList.add('body-no-scroll');
+
+    const iconProfileModal = document.querySelector('.profile-modal__icon');
+
+    iconProfileModal.textContent = `${localStorage.getItem('firstName')[0]}${
+      localStorage.getItem('lastName')[0]
+    }`;
+
+    const iconProfileName = document.querySelector('.profile-modal__name');
+
+    iconProfileName.textContent = `${localStorage.getItem(
+      'firstName'
+    )} ${localStorage.getItem('lastName')}`;
+
+    const counter = document.querySelector(
+      '.profile-modal .search-card__info-count'
+    );
+
+    counter.textContent = localStorage.getItem('countAutorisation');
   }
 
-  changesAfterAutorisation();
+  function closeProfileModal() {
+    profileModal.classList.remove('profile-modal_active');
+    canvas.classList.remove('canvas__show');
+    body.classList.remove('body-no-scroll');
+  }
+
+  closeModalBtn(profileModal);
 
   const valueUserName = document.querySelector('.search-card__user-name'),
     valueCardNumber = document.querySelector('.search-card__card-number');
@@ -481,6 +530,12 @@ window.addEventListener('DOMContentLoaded', () => {
     ) {
       checkCard.style.display = 'none';
       cardInfo.style.display = 'flex';
+
+      const counter = document.querySelector(
+        '.search-card .search-card__info-count'
+      );
+
+      counter.textContent = localStorage.getItem('countAutorisation');
 
       const req = new Promise(function (resolve) {
         setTimeout(function () {

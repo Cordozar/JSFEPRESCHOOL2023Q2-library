@@ -1,0 +1,116 @@
+.profile-modal {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  z-index: 13;
+  display: none;
+  transform: translate(-50%, -50%);
+
+  &_active {
+    display: flex;
+  }
+}
+.profile-modal__left-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 403px;
+  background-color: $color-main-dark;
+}
+.profile-modal__icon {
+  @include font-inter($line-height: 2rem);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  color: $color-primary;
+  text-transform: uppercase;
+  background-color: $color-white;
+}
+
+.profile-modal__name {
+  @include font-inter($line-height: 2rem);
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 120px;
+  padding: 5px 0;
+  background-color: $color-white;
+}
+.profile-modal__right-block {
+  padding: 29px 60px 39px 20px;
+  background-color: $color-white;
+}
+.profile-modal__title {
+  @include font-forum($font-size: 4rem, $letter-spacing: 0.8px);
+
+  margin-bottom: 27px;
+  text-transform: uppercase;
+}
+.profile-modal__info-name {
+  @include font-inter(
+  $line-height: 2rem,
+  $letter-spacing: 0.2px
+  );
+  margin-bottom: 10px;
+}
+.profile-modal__info-img {
+  margin-bottom: 10px;
+}
+.profile-modal__info {
+  display: flex;
+  column-gap: 22px;
+  align-self: center;
+  margin-bottom: 20px;
+}
+.profile-modal__subtitle {
+  @include font-inter($font-size: 2.5rem, $line-height: 2rem);
+
+  margin-bottom: 30px;
+}
+.profile-modal__book-list {
+  margin-bottom: 40px;
+  list-style: inside;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.profile-modal__item {
+  @include font-inter(
+    $font-size: 2rem,
+    $line-height: 2rem,
+    $letter-spacing: 2px
+  );
+  padding-left: 2px;
+}
+.profile-modal__row {
+  display: flex;
+  column-gap: 15px;
+}
+.profile-modal__text {
+  @include font-inter($font-size: 2rem, $line-height: 2rem);
+
+  display: inline-block;
+  color: $color-main-dark;
+}
+.profile-modal__card-number {
+  @include font-inter($font-size: 2rem, $line-height: 2rem);
+
+  display: inline-block;
+  color: $color-primary;
+}
+.profile-modal__icon-copy {
+  display: inline-block;
+  width: 12px;
+  height: 13.3px;
+  padding-left: 15px;
+  background-image: url('../img/icon\ copy.svg');
+  background-repeat: no-repeat;
+  align-self: center;
+}
