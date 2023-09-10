@@ -282,6 +282,7 @@ window.addEventListener('DOMContentLoaded', () => {
       closeRegisterModal();
       closeLoginModal();
       closeProfileModal();
+      closeBuyModal();
     }
   });
 
@@ -291,6 +292,7 @@ window.addEventListener('DOMContentLoaded', () => {
         closeRegisterModal();
         closeLoginModal();
         closeProfileModal();
+        closeBuyModal();
       }
     });
   }
@@ -301,11 +303,12 @@ window.addEventListener('DOMContentLoaded', () => {
     openRegisterModal();
   });
 
-  // LoginModal
+  // LoginModal and BuyModal
 
   const login = document.querySelector('.profile-menu__login'),
     loginSecond = document.querySelector('.cards__access-log-in'),
-    cardBtns = document.querySelectorAll('.card__btn');
+    cardBtns = document.querySelectorAll('.card__btn'),
+    buyModal = document.querySelector('.buy-modal');
 
   function openLoginModal() {
     canvas.classList.add('canvas__show');
@@ -319,19 +322,34 @@ window.addEventListener('DOMContentLoaded', () => {
     loginModal.classList.remove('login__show');
   }
 
+  function openBuyModal() {
+    canvas.classList.add('canvas__show');
+    body.classList.add('body-no-scroll');
+    buyModal.classList.add('buy-modal_active');
+  }
+
+  function closeBuyModal() {
+    canvas.classList.remove('canvas__show');
+    body.classList.remove('body-no-scroll');
+    buyModal.classList.remove('buy-modal_active');
+  }
+
   login.addEventListener('click', () => {
     openLoginModal();
   });
 
   cardBtns.forEach((el) => {
     el.addEventListener('click', () => {
-      if (!localStorage.getItem('isAutorisation')) {
+      if (!checkAutorisationStatus()) {
         openLoginModal();
+      } else {
+        openBuyModal();
       }
     });
   });
 
   closeModalBtn(loginModal);
+  closeModalBtn(buyModal);
 
   loginSecond.addEventListener('click', () => {
     openLoginModal();
@@ -354,6 +372,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     return hexNumber;
   }
+
+  // Filling out data in localstage
 
   registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -408,6 +428,7 @@ window.addEventListener('DOMContentLoaded', () => {
     toogleAttributeTitle();
     toggleTitleMenu();
     changeMenuProfile();
+    changeDigitalCards();
   }
 
   changesAfterAutorisation();
@@ -473,6 +494,49 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function changeDigitalCards() {
+    const title = document.querySelector('.cards__access-title'),
+      discription = document.querySelector('.cards__access-description'),
+      btn1 = document.querySelector('.cards__access-sign-up'),
+      btn2 = document.querySelector('.cards__access-log-in'),
+      btn3 = document.querySelector('.cards__access-profile'),
+      valueName = document.querySelector('.search-card__user-name'),
+      valueNumber = document.querySelector('.search-card__card-number');
+    if (checkAutorisationStatus()) {
+      title.textContent = 'Visit your profile';
+      discription.textContent =
+        'With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.';
+      btn1.style.display = 'none';
+      btn2.style.display = 'none';
+      btn3.style.display = 'block';
+
+      valueName.value = `${localStorage.getItem(
+        'firstName'
+      )} ${localStorage.getItem('lastName')}`;
+      valueNumber.value = `${localStorage.getItem('cardNumber')}`;
+
+      changeCardDecor();
+    } else {
+      title.textContent = 'Get a reader card';
+      discription.textContent =
+        'You will be able to see a reader card after logging into account or you can register a new account';
+      btn1.style.display = 'block';
+      btn2.style.display = 'block';
+      btn3.style.display = 'none';
+
+      valueName.value = '';
+      valueNumber.value = '';
+
+      changeCardDecor();
+    }
+  }
+
+  changeDigitalCards();
+
+  const myProfileBtnSecond = document.querySelector('.cards__access-profile');
+
+  myProfileBtnSecond.addEventListener('click', openProfileModal);
+
   function counterAutorisation() {
     let count = +localStorage.getItem('countAutorisation');
     count += 1;
@@ -488,21 +552,19 @@ window.addEventListener('DOMContentLoaded', () => {
     canvas.classList.add('canvas__show');
     body.classList.add('body-no-scroll');
 
-    const iconProfileModal = document.querySelector('.profile-modal__icon');
+    const iconProfileModal = document.querySelector('.profile-modal__icon'),
+      iconProfileName = document.querySelector('.profile-modal__name'),
+      counter = document.querySelector(
+        '.profile-modal .search-card__info-count'
+      );
 
     iconProfileModal.textContent = `${localStorage.getItem('firstName')[0]}${
       localStorage.getItem('lastName')[0]
     }`;
 
-    const iconProfileName = document.querySelector('.profile-modal__name');
-
     iconProfileName.textContent = `${localStorage.getItem(
       'firstName'
     )} ${localStorage.getItem('lastName')}`;
-
-    const counter = document.querySelector(
-      '.profile-modal .search-card__info-count'
-    );
 
     counter.textContent = localStorage.getItem('countAutorisation');
   }
@@ -521,24 +583,24 @@ window.addEventListener('DOMContentLoaded', () => {
   copyBtn.addEventListener('click', () => {
     const textarea = document.createElement('textarea');
     textarea.value = selectCardNumber.innerText;
-    
+
     document.body.appendChild(textarea);
-    
+
     textarea.select();
-    
+
     document.execCommand('copy');
-    
+
     document.body.removeChild(textarea);
   });
 
-  const valueUserName = document.querySelector('.search-card__user-name'),
-    valueCardNumber = document.querySelector('.search-card__card-number');
-
   function changeCardDecor() {
     const userName = `${localStorage.getItem(
-      'firstName'
-    )} ${localStorage.getItem('lastName')}`;
-    const cardNumber = `${localStorage.getItem('cardNumber')}`;
+        'firstName'
+      )} ${localStorage.getItem('lastName')}`,
+      cardNumber = `${localStorage.getItem('cardNumber')}`;
+
+    const valueUserName = document.querySelector('.search-card__user-name'),
+      valueCardNumber = document.querySelector('.search-card__card-number');
 
     if (
       valueUserName.value === userName &&
@@ -552,6 +614,14 @@ window.addEventListener('DOMContentLoaded', () => {
       );
 
       counter.textContent = localStorage.getItem('countAutorisation');
+    }
+  }
+
+  checkCard.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (localStorage.getItem('isRegister') && !checkAutorisationStatus()) {
+      changeCardDecor();
 
       const req = new Promise(function (resolve) {
         setTimeout(function () {
@@ -567,14 +637,6 @@ window.addEventListener('DOMContentLoaded', () => {
         valueCardNumber.value = '';
       });
     }
-  }
-
-  checkCard.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    if (localStorage.getItem('isRegister')) {
-      changeCardDecor();
-    }
   });
 
   logOutBtn.addEventListener('click', changesAfterLogout);
@@ -586,5 +648,9 @@ window.addEventListener('DOMContentLoaded', () => {
     toogleAttributeTitle();
     toggleTitleMenu();
     changeMenuProfile();
+    changeDigitalCards();
+
+    checkCard.style.display = 'block';
+    cardInfo.style.display = 'none';
   }
 });

@@ -8,4 +8,8 @@
   background-image: url('../img/close_btn.svg');
   background-size: contain;
   cursor: pointer;
+
+  &_buy {
+  background-image: url('../img/close_btn\ \(1\).svg');
+  }
 }

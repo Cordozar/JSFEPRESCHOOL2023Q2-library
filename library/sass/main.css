@@ -1576,6 +1576,9 @@ a {
   background-size: contain;
   cursor: pointer;
 }
+.close-btn_buy {
+  background-image: url("../img/close_btn (1).svg");
+}
 
 .header__register {
   position: fixed;
@@ -1848,6 +1851,107 @@ a {
   cursor: pointer;
 }
 
+.buy-modal {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  z-index: 13;
+  width: 640px;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+.buy-modal_active {
+  display: block;
+}
+
+.buy-modal__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: normal;
+  font-family: "Forum", cursive;
+  color: black;
+  letter-spacing: 0.8px;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #0c0c0e;
+}
+
+.buy-modal__content {
+  display: flex;
+  padding: 30px 35px 40px 35px;
+  column-gap: 40px;
+  background-color: #ffffff;
+}
+
+.buy-modal__form {
+  width: 200px;
+}
+
+.buy-modal__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+}
+
+.buy-modal__input {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #bb945f;
+  border-radius: 0;
+}
+.buy-modal__input:nth-child(7) {
+  margin-bottom: 20px;
+}
+
+.buy-modal__input-short {
+  width: 45px;
+}
+
+.buy-modal__btn {
+  display: inline-block;
+}
+
+.buy-modal__price {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 20px;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: 2px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.buy-modal__bottom {
+  display: flex;
+  align-items: end;
+  column-gap: 25px;
+  margin-top: 10px;
+}
+
+.buy-modal__right-column {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  color: black;
+  letter-spacing: 2px;
+  width: 330px;
+  color: #8e8e8e;
+}
+
 .search-card__user-name, .search-card__card-number {
   font-style: normal;
   font-weight: 400;
@@ -2100,6 +2204,10 @@ a {
 
 .cards__access-sign-up {
   margin-right: 20px;
+}
+
+.cards__access-profile {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

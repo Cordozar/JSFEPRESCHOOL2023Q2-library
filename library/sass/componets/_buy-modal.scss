@@ -1,0 +1,84 @@
+.buy-modal {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  z-index: 13;
+  width: 640px;
+  display: none;
+  transform: translate(-50%, -50%);
+
+  &_active {
+    display: block;
+  }
+}
+.buy-modal__title {
+  @include font-forum($font-size: 4rem, $letter-spacing: 0.8px);
+
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  color: $color-white;
+  text-transform: uppercase;
+  background-color: $color-main-dark;
+}
+.buy-modal__content {
+  display: flex;
+  padding: 30px 35px 40px 35px;
+  column-gap: 40px;
+  background-color: $color-white;
+}
+.buy-modal__form {
+  width: 200px;
+}
+.buy-modal__text {
+  @include font-inter(
+    $font-size: 1.5rem,
+    $line-height: 2rem,
+    $letter-spacing: 0.3px
+  );
+
+  margin-bottom: 10px;
+}
+.buy-modal__input {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #bb945f;
+  border-radius: 0;
+
+  &:nth-child(7) {
+    margin-bottom: 20px;
+  }
+}
+.buy-modal__input-short {
+  width: 45px;
+}
+.buy-modal__btn {
+  display: inline-block;
+}
+.buy-modal__price {
+  @include font-inter(
+    $font-weight: 700,
+    $line-height: 20px,
+    $letter-spacing: 2px
+  );
+
+  display: inline-block;
+  text-transform: uppercase;
+}
+.buy-modal__bottom {
+  display: flex;
+  align-items: end;
+  column-gap: 25px;
+  margin-top: 10px;
+}
+.buy-modal__right-column {
+  @include font-inter(
+    $font-size: 1.5rem,
+    $line-height: 2rem,
+    $letter-spacing: 2px
+  );
+
+  width: 330px;
+  color: $color-grey;
+}
