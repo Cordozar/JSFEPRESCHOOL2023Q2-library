@@ -1324,6 +1324,9 @@ a {
   margin-bottom: 20px;
   text-align: center;
 }
+.profile-menu__title_number {
+  font-size: 1rem;
+}
 .profile-menu__title::after {
   content: "";
   position: absolute;

@@ -382,105 +382,45 @@ window.addEventListener('DOMContentLoaded', () => {
   const checkCard = document.querySelector('.search-card__search-btn'),
     cardInfo = document.querySelector('.search-card__info');
 
-  changesAfterRegistration();
+  // function checkRegistrationStatus() {
+  //   if (localStorage.getItem('isRegister')) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-  function сhangeIconProfile() {
+  function checkAutorisationStatus() {
     if (localStorage.getItem('isAutorisation')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function changeIconProfile() {
+    if (checkAutorisationStatus()) {
       iconProfile.classList.remove('header__icon-profile_without-registering');
       iconProfile.classList.add('header__icon-profile_registering');
       iconProfile.textContent = `${localStorage.getItem('firstName')[0]}${
         localStorage.getItem('lastName')[0]
       }`;
     } else {
-      localStorage.removeItem('isAutorisation');
-
       iconProfile.classList.add('header__icon-profile_without-registering');
       iconProfile.classList.remove('header__icon-profile_registering');
       iconProfile.textContent = ``;
     }
   }
+
+  changeIconProfile();
 
   function changeMenuProfile() {
-    if (localStorage.getItem('isAutorisation')) {
+    if (checkAutorisationStatus()) {
       login.classList.remove('active');
       register.classList.remove('active');
       myProfileBtn.classList.add('active');
       logOutBtn.classList.add('active');
     } else {
-      login.classList.remove('active');
-      register.classList.remove('active');
-      myProfileBtn.classList.add('active');
-      logOutBtn.classList.add('active');
-    }
-  }
-
-  function addStatusRegistration() {
-    localStorage.setItem('isRegistration', true);
-  }
-
-
-
-  function changesAfterRegistration() {
-    if (localStorage.getItem('isRegister')) {
-      iconProfile.classList.remove('header__icon-profile_without-registering');
-      iconProfile.classList.add('header__icon-profile_registering');
-      iconProfile.textContent = `${localStorage.getItem('firstName')[0]}${
-        localStorage.getItem('lastName')[0]
-      }`;
-
-      login.classList.remove('active');
-      register.classList.remove('active');
-      myProfileBtn.classList.add('active');
-      logOutBtn.classList.add('active');
-    }
-  }
-
-  const valueUserName = document.querySelector('.search-card__user-name'),
-    valueCardNumber = document.querySelector('.search-card__card-number');
-
-  checkCard.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    if (localStorage.getItem('isRegister')) {
-      const userName = `${localStorage.getItem(
-        'firstName'
-      )} ${localStorage.getItem('lastName')}`;
-      const cardNumber = `${localStorage.getItem('cardNumber')}`;
-
-      if (
-        valueUserName.value === userName &&
-        valueCardNumber.value === cardNumber
-      ) {
-        checkCard.style.display = 'none';
-        cardInfo.style.display = 'flex';
-
-        const req = new Promise(function (resolve) {
-          setTimeout(function () {
-            checkCard.style.display = 'block';
-            cardInfo.style.display = 'none';
-
-            resolve();
-          }, 10000);
-        });
-
-        req.then(() => {
-          valueUserName.value = '';
-          valueCardNumber.value = '';
-        });
-      }
-    }
-  });
-
-  logOutBtn.addEventListener('click', changesAfterLogout);
-
-  function changesAfterLogout() {
-    if (localStorage.getItem('isAutorisation')) {
-      localStorage.removeItem('isAutorisation');
-
-      iconProfile.classList.add('header__icon-profile_without-registering');
-      iconProfile.classList.remove('header__icon-profile_registering');
-      iconProfile.textContent = ``;
-
       login.classList.add('active');
       register.classList.add('active');
       myProfileBtn.classList.remove('active');
@@ -488,9 +428,92 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Changes after rigistration
+  function toogleAttributeTitle() {
+    if (checkAutorisationStatus()) {
+      const userName = `${localStorage.getItem(
+        'firstName'
+      )} ${localStorage.getItem('lastName')}`;
+      iconProfile.setAttribute('title', userName);
+    } else {
+      iconProfile.removeAttribute('title');
+    }
+  }
 
-  // function changesAfterAutorisation () {
-  //   if (localStorage.getItem('isAutorisation')) {}
-  // }
+  function toggleTitleMenu() {
+    const titleMenu = document.querySelector('.profile-menu__title');
+
+    if (checkAutorisationStatus()) {
+      titleMenu.textContent = `${localStorage.getItem('cardNumber')}`;
+      titleMenu.classList.add('profile-menu__title_number');
+    } else {
+      titleMenu.textContent = 'Profile';
+      titleMenu.classList.remove('profile-menu__title_number');
+    }
+  }
+
+  function changesAfterRegistration() {
+    localStorage.setItem('isRegister', true);
+
+    changesAfterAutorisation();
+  }
+
+  function changesAfterAutorisation() {
+    changeIconProfile();
+    toogleAttributeTitle();
+    toggleTitleMenu();
+    changeMenuProfile();
+  }
+
+  changesAfterAutorisation();
+
+  const valueUserName = document.querySelector('.search-card__user-name'),
+    valueCardNumber = document.querySelector('.search-card__card-number');
+
+  function changeCardDecor() {
+    const userName = `${localStorage.getItem(
+      'firstName'
+    )} ${localStorage.getItem('lastName')}`;
+    const cardNumber = `${localStorage.getItem('cardNumber')}`;
+
+    if (
+      valueUserName.value === userName &&
+      valueCardNumber.value === cardNumber
+    ) {
+      checkCard.style.display = 'none';
+      cardInfo.style.display = 'flex';
+
+      const req = new Promise(function (resolve) {
+        setTimeout(function () {
+          checkCard.style.display = 'block';
+          cardInfo.style.display = 'none';
+
+          resolve();
+        }, 10000);
+      });
+
+      req.then(() => {
+        valueUserName.value = '';
+        valueCardNumber.value = '';
+      });
+    }
+  }
+
+  checkCard.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (localStorage.getItem('isRegister')) {
+      changeCardDecor();
+    }
+  });
+
+  logOutBtn.addEventListener('click', changesAfterLogout);
+
+  function changesAfterLogout() {
+    localStorage.removeItem('isAutorisation');
+
+    changeIconProfile();
+    toogleAttributeTitle();
+    toggleTitleMenu();
+    changeMenuProfile();
+  }
 });
