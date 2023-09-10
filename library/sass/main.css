@@ -1733,9 +1733,9 @@ a {
   letter-spacing: normal;
   display: flex;
   justify-content: center;
-  text-align: center;
   width: 120px;
   padding: 5px 0;
+  text-align: center;
   background-color: #ffffff;
 }
 
@@ -1773,9 +1773,9 @@ a {
 
 .profile-modal__info {
   display: flex;
-  column-gap: 22px;
   align-self: center;
   margin-bottom: 20px;
+  column-gap: 22px;
 }
 
 .profile-modal__subtitle {
@@ -1790,10 +1790,10 @@ a {
 }
 
 .profile-modal__book-list {
-  margin-bottom: 40px;
-  list-style: inside;
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
+  list-style: inside;
   row-gap: 10px;
 }
 
@@ -1839,12 +1839,13 @@ a {
 
 .profile-modal__icon-copy {
   display: inline-block;
+  align-self: center;
   width: 12px;
   height: 13.3px;
   padding-left: 15px;
   background-image: url("../img/icon copy.svg");
   background-repeat: no-repeat;
-  align-self: center;
+  cursor: pointer;
 }
 
 .search-card__user-name, .search-card__card-number {

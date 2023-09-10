@@ -515,6 +515,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
   closeModalBtn(profileModal);
 
+  const copyBtn = document.querySelector('.profile-modal__icon-copy'),
+    selectCardNumber = document.querySelector('.profile-modal__card-number');
+
+  copyBtn.addEventListener('click', () => {
+    const textarea = document.createElement('textarea');
+    textarea.value = selectCardNumber.innerText;
+    
+    document.body.appendChild(textarea);
+    
+    textarea.select();
+    
+    document.execCommand('copy');
+    
+    document.body.removeChild(textarea);
+  });
+
   const valueUserName = document.querySelector('.search-card__user-name'),
     valueCardNumber = document.querySelector('.search-card__card-number');
 

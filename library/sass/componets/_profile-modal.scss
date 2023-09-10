@@ -38,9 +38,9 @@
 
   display: flex;
   justify-content: center;
-  text-align: center;
   width: 120px;
   padding: 5px 0;
+  text-align: center;
   background-color: $color-white;
 }
 .profile-modal__right-block {
@@ -58,6 +58,7 @@
   $line-height: 2rem,
   $letter-spacing: 0.2px
   );
+
   margin-bottom: 10px;
 }
 .profile-modal__info-img {
@@ -65,9 +66,9 @@
 }
 .profile-modal__info {
   display: flex;
-  column-gap: 22px;
   align-self: center;
   margin-bottom: 20px;
+  column-gap: 22px;
 }
 .profile-modal__subtitle {
   @include font-inter($font-size: 2.5rem, $line-height: 2rem);
@@ -75,18 +76,19 @@
   margin-bottom: 30px;
 }
 .profile-modal__book-list {
-  margin-bottom: 40px;
-  list-style: inside;
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
+  list-style: inside;
   row-gap: 10px;
 }
 .profile-modal__item {
   @include font-inter(
-    $font-size: 2rem,
-    $line-height: 2rem,
-    $letter-spacing: 2px
+  $font-size: 2rem,
+  $line-height: 2rem,
+  $letter-spacing: 2px
   );
+
   padding-left: 2px;
 }
 .profile-modal__row {
@@ -107,10 +109,11 @@
 }
 .profile-modal__icon-copy {
   display: inline-block;
+  align-self: center;
   width: 12px;
   height: 13.3px;
   padding-left: 15px;
   background-image: url('../img/icon\ copy.svg');
   background-repeat: no-repeat;
-  align-self: center;
+  cursor: pointer;
 }
