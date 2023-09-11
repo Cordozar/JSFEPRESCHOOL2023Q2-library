@@ -4,6 +4,7 @@
   left: 50%;
   z-index: 13;
   display: none;
+  width: 600px;
   transform: translate(-50%, -50%);
 
   &_active {
@@ -16,7 +17,6 @@
   justify-content: center;
   align-items: center;
   width: 170px;
-  height: 403px;
   background-color: $color-main-dark;
 }
 .profile-modal__icon {
@@ -54,10 +54,7 @@
   text-transform: uppercase;
 }
 .profile-modal__info-name {
-  @include font-inter(
-  $line-height: 2rem,
-  $letter-spacing: 0.2px
-  );
+  @include font-inter($line-height: 2rem, $letter-spacing: 0.2px);
 
   margin-bottom: 10px;
 }
@@ -79,17 +76,34 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
-  list-style: inside;
+  overflow-x: scroll;
+  white-space: nowrap;
   row-gap: 10px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 .profile-modal__item {
   @include font-inter(
-  $font-size: 2rem,
-  $line-height: 2rem,
-  $letter-spacing: 2px
+    $font-size: 2rem,
+    $line-height: 2rem,
+    $letter-spacing: 2px
   );
 
-  padding-left: 2px;
+  position: relative;
+  padding-left: 30px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    display: block;
+    width: 10px;
+    height: 100%;
+    background-image: url('../img/point.svg');
+  }
 }
 .profile-modal__row {
   display: flex;

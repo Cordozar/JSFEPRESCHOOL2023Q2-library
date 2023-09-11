@@ -49,7 +49,7 @@
         <button class="profile-menu__logout">Log Out</button>
       </div>
       <div class="profile-modal">
-        <div class="close-btn"></div>
+        <div class="close-btn close-btn_profile"></div>
         <div class="profile-modal__left-block">
           <div class="profile-modal__icon">JD</div>
           <div class="profile-modal__name">John Doe</div>
@@ -153,9 +153,9 @@
           <input class="register__password-input" type="password" name="register-password" id="registerPassword"
             required minlength="8">
           <button class="register__btn btn" type="submit">Sign Up</button>
-          <span class="register__login">Already have an account?</span>
-          <button type="submit" class="register_link">Login</button>
         </form>
+        <span class="register__login">Already have an account?</span>
+        <button class="register_link">Login</button>
       </div>
       <div class="header__burger burger">
         <img class="burger_open" src="./img/burger.svg" alt="burger open">
@@ -227,12 +227,12 @@
           <div class="buy-modal__text">
             Bank card number
           </div>
-          <input type="text" class="buy-modal__input">
+          <input type="number" class="buy-modal__input" minlength="16" maxlength="16">
           <div class="buy-modal__text">
             Expiration code
           </div>
-          <input type="text" class="buy-modal__input buy-modal__input-short">
-          <input type="text" class="buy-modal__input buy-modal__input-short">
+          <input type="number" class="buy-modal__input buy-modal__input-short" minlength="2" maxlength="2">
+          <input type="number" class="buy-modal__input buy-modal__input-short" minlength="2" maxlength="2">
           <div class="buy-modal__text">
             CVC
           </div>

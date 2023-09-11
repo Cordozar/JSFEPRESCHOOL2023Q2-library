@@ -10,6 +10,12 @@
   cursor: pointer;
 
   &_buy {
-  background-image: url('../img/close_btn\ \(1\).svg');
+    top: 23px;
+    background-image: url('../img/close_btn\ \(1\).svg');
+  }
+
+  &_profile {
+    top: 25px;
+    right: 25px;
   }
 }

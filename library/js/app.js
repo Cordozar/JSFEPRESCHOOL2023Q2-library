@@ -259,7 +259,8 @@ window.addEventListener('DOMContentLoaded', () => {
     registerModal = document.querySelector('.register'),
     loginModal = document.querySelector('.login'),
     body = document.body,
-    registerSecond = document.querySelector('.cards__access-sign-up');
+    registerSecond = document.querySelector('.cards__access-sign-up'),
+    registerThird = document.querySelector('.login__link');
 
   function openRegisterModal() {
     canvas.classList.add('canvas__show');
@@ -275,6 +276,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   register.addEventListener('click', () => {
     openRegisterModal();
+    menu.classList.remove('profile-menu__active');
   });
 
   canvas.addEventListener('click', (e) => {
@@ -303,12 +305,18 @@ window.addEventListener('DOMContentLoaded', () => {
     openRegisterModal();
   });
 
+  registerThird.addEventListener('click', () => {
+    closeLoginModal();
+    openRegisterModal();
+  });
+
   // LoginModal and BuyModal
 
   const login = document.querySelector('.profile-menu__login'),
     loginSecond = document.querySelector('.cards__access-log-in'),
     cardBtns = document.querySelectorAll('.card__btn'),
-    buyModal = document.querySelector('.buy-modal');
+    buyModal = document.querySelector('.buy-modal'),
+    loginThird = document.querySelector('.register_link');
 
   function openLoginModal() {
     canvas.classList.add('canvas__show');
@@ -336,16 +344,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   login.addEventListener('click', () => {
     openLoginModal();
-  });
-
-  cardBtns.forEach((el) => {
-    el.addEventListener('click', () => {
-      if (!checkAutorisationStatus()) {
-        openLoginModal();
-      } else {
-        openBuyModal();
-      }
-    });
+    menu.classList.remove('profile-menu__active');
   });
 
   closeModalBtn(loginModal);
@@ -353,6 +352,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
   loginSecond.addEventListener('click', () => {
     openLoginModal();
+  });
+
+  loginThird.addEventListener('click', () => {
+    closeRegisterModal();
+    openLoginModal();
+  });
+  // // Работа с модальным окном для покупки книг
+
+  // let bookNumber = 0;
+
+  cardBtns.forEach((el, i) => {
+    el.addEventListener('click', () => {
+      bookNumber = i;
+
+      if (!checkAutorisationStatus()) {
+        openLoginModal();
+      } else {
+        openBuyModal();
+      }
+    });
   });
 
   // Changes after rigistration and autorisation
@@ -394,16 +413,18 @@ window.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('countAutorisation', 1);
 
       changesAfterAutorisation();
+
+      closeRegisterModal();
     }
 
     registerForm.reset();
   });
 
-  const formLogin = document.querySelector('.login__form'),
+  const loginForm = document.querySelector('.login__form'),
     inputLoginEmail = document.querySelector('.login__email-input'),
     inputLoginPassword = document.querySelector('.login__password-input');
 
-  formLogin.addEventListener('submit', (e) => {
+  loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (
@@ -415,6 +436,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
       changesAfterAutorisation();
       counterAutorisation();
+
+      closeLoginModal();
     }
   });
 
@@ -543,9 +566,13 @@ window.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('countAutorisation', count);
   }
 
-  const profileModal = document.querySelector('.profile-modal');
+  const profileModal = document.querySelector('.profile-modal'),
+    profileCardNumber = document.querySelector('.profile-modal__card-number');
 
   myProfileBtn.addEventListener('click', openProfileModal);
+  myProfileBtn.addEventListener('click', () => {
+    menu.classList.remove('profile-menu__active');
+  });
 
   function openProfileModal() {
     profileModal.classList.add('profile-modal_active');
@@ -567,6 +594,8 @@ window.addEventListener('DOMContentLoaded', () => {
     )} ${localStorage.getItem('lastName')}`;
 
     counter.textContent = localStorage.getItem('countAutorisation');
+
+    profileCardNumber.textContent = localStorage.getItem('cardNumber');
   }
 
   function closeProfileModal() {
@@ -640,6 +669,9 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   logOutBtn.addEventListener('click', changesAfterLogout);
+  logOutBtn.addEventListener('click', () => {
+    menu.classList.remove('profile-menu__active');
+  });
 
   function changesAfterLogout() {
     localStorage.removeItem('isAutorisation');
@@ -653,4 +685,17 @@ window.addEventListener('DOMContentLoaded', () => {
     checkCard.style.display = 'block';
     cardInfo.style.display = 'none';
   }
+
+  // Working with buyModal
+
+  // const buyModalForm = document.querySelector('.buy-modal__form'),
+  //   buyModalBtn = document.querySelector('.buy-modal__btn'),
+  //   buyModalInputs = document.querySelectorAll('.buy-modal__form input');
+
+  // buyModalForm.addEventListener('submit', (e) => {
+  //   e.preventDefault();
+
+  //   let filledFields;
+
+  // });
 });
