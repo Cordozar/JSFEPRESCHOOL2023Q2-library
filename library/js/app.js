@@ -38,9 +38,11 @@ window.addEventListener('DOMContentLoaded', () => {
       if (
         !navigation.contains(e.target) &&
         !e.target.closest('.burger') &&
-        !e.target.closest('.header__icon-profile')
+        !e.target.closest('.header__icon-profile')&&
+        !e.target.closest('.profile-menu')
       ) {
         burgerClose();
+        menu.classList.remove('profile-menu__active')
       }
     });
   }
@@ -240,7 +242,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Authorization
 
-  const iconProfile = document.querySelector('.header__icon-profile'),
+  var iconProfile = document.querySelector('.header__icon-profile'),
     burgerStatus = document.querySelector('.burger img');
 
   var menu = document.querySelector('.profile-menu');
